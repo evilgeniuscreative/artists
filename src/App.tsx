@@ -1,9 +1,8 @@
 import React, {useEffect,useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {ListView} from  './components/listview';
 import { Artist } from './types';
-import { TableView } from './components/tableview';
+import { ListView, TableView } from  './components/';
+
 
 // TODO: STYLING FOR THE TABLE VIEW
 // Will have a form from FORMIK.org

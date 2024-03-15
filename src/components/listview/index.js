@@ -1,4 +1,3 @@
-import {ListView} from './ListView.tsx';
+import { ListView } from './ListView.tsx';
 
-
-export {ListView}
+export { ListView };
