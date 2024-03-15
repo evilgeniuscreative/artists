@@ -1,0 +1,26 @@
+#new_artist {
+  h1 {
+    text-align: center;
+  }
+  form {
+    margin: auto;
+    width: 400px;
+
+    label {
+      display: block;
+      font-weight: 700;
+    }
+
+    input {
+      display: block;
+      font-size: 18px;
+      padding: 5px;
+      margin-bottom: 25px;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 5px 15px;
+    }
+  }
+}

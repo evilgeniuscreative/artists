@@ -1,0 +1,14 @@
+#home {
+  margin: 100px auto;
+  width: 400px;
+}
+#home h1 {
+  color: black;
+  border: none;
+  padding: 0;
+  margin: 100px auto 20px auto;
+  text-align: center;
+}
+#home .chooser {
+  text-align: center;
+}/*# sourceMappingURL=home.css.map */

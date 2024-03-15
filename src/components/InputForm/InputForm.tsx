@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './inputForm.css';
 import {
   Formik,
   FormikHelpers,
@@ -16,8 +17,8 @@ interface MyFormValues {
 const InputForm: React.FC<{}> = () => {
   const initialValues: MyFormValues = { value: '' , description: ''};
   return (
-    <div>
-      <h1>My Example</h1>
+    <main id="new_artist">
+      <h1>Add New Artist</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={(values, actions) => {
@@ -34,7 +35,7 @@ const InputForm: React.FC<{}> = () => {
           <button type="submit">Submit</button>
         </Form>
       </Formik>
-    </div>
+    </main>
   );
 };
 

@@ -1,0 +1,21 @@
+#new_artist h1 {
+  text-align: center;
+}
+#new_artist form {
+  margin: auto;
+  width: 400px;
+}
+#new_artist form label {
+  display: block;
+  font-weight: 700;
+}
+#new_artist form input {
+  display: block;
+  font-size: 18px;
+  padding: 5px;
+  margin-bottom: 25px;
+}
+#new_artist form button {
+  font-size: 18px;
+  padding: 5px 15px;
+}/*# sourceMappingURL=inputForm.css.map */
