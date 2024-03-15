@@ -1,0 +1,13 @@
+{
+  "artists": [
+    {
+      "id": "0",
+      "name": "Sappira Vee",
+      "url": "https://sapphiravee.bandcamp.com/track/last-ft-jim-marcus",
+      "city": "New York",
+      "description": "This is Sapphira Vee",
+      "image": "https://f4.bcbits.com/img/a3016735344_10.jpg",
+      "audio": ["mp31.mp3", "mp32.mp3", "mp33.mp3"]
+    }
+  ]
+}

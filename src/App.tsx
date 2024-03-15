@@ -1,24 +1,39 @@
-import React from 'react';
+import React, {useEffect,useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {ListView} from  './components/listview';
+import { Artist } from './types';
+import { TableView } from './components/tableview';
+import { ModifierFlags } from 'typescript';
+
+// TODO: STYLING FOR THE TABLE VIEW
+// Will have a form from FORMIK.org
+// Read documentations and examples
+// can you get json-server documentation patch and etc requests
 
 function App() {
+
+const [artists, setArtists] = useState<Artist[]>([]);
+
+useEffect(() => {
+  fetch('http://localhost:5000/artists')
+  .then(response => response.json())
+  .then(data => setArtists(data)
+  )
+},[]);
+
+
+
+const modifiedData = artists.map((data)=>({id:data.id,value: data.name,description: data.description}));
+
+console.log('DATA outside USEEFFECT',artists)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      {
+          artists.length? <><ListView data={modifiedData} /> <TableView data={modifiedData}/></> : <><div className="loader"></div></>
+      }
+      
     </div>
   );
 }
