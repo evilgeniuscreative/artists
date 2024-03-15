@@ -18,7 +18,7 @@ interface ListViewProps {
             <h1>Hello This is list View</h1>
             <ul>
                 {data.map((item) => {
-                    return <li key={item.id}>{item.value} {item.description}</li>
+                    return <li key={item.id}>{item.value}: {item.description}</li>
                 })}
              </ul>
         </div>

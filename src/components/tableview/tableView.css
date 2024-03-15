@@ -3,11 +3,12 @@ table {
 }
 th,
 td {
-  padding: 5px 10px;
+  padding: 5px 20px;
   border: 1px solid #ddd;
 }
 th {
-  background: lavender;
+  background: #800080;
+  color: white;
 }
 td :nth-child(even) {
   background: #eee;

@@ -31,7 +31,7 @@ console.log('DATA outside USEEFFECT',artists)
     <div className="App">
 
       {
-          artists.length? <><ListView data={modifiedData} /> <TableView data={modifiedData}/></> : <><div className="loader"></div></>
+          artists.length? <><ListView data={modifiedData} /> <hr/> <TableView data={modifiedData}/></> : <><div className="loader"></div></>
       }
       
     </div>
