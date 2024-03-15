@@ -4,7 +4,6 @@ import './App.css';
 import {ListView} from  './components/listview';
 import { Artist } from './types';
 import { TableView } from './components/tableview';
-import { ModifierFlags } from 'typescript';
 
 // TODO: STYLING FOR THE TABLE VIEW
 // Will have a form from FORMIK.org
