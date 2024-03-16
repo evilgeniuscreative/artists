@@ -7,11 +7,7 @@
       "city": "New York",
       "description": "This is Sapphira Vee",
       "image": "https://f4.bcbits.com/img/a3016735344_10.jpg",
-      "audio": [
-        "mp31.mp3",
-        "mp32.mp3",
-        "mp33.mp3"
-      ]
+      "audio": ["mp31.mp3", "mp32.mp3", "mp33.mp3"]
     },
     {
       "id": "a957",
@@ -25,6 +21,70 @@
       "url": "http://maxrocketmusic.com",
       "city": "Durham",
       "image": "https://maxrocketmusic.com/wp-content/uploads/2024/03/max-rocket-logo.jpg"
+    },
+    {
+      "id": "37ae",
+      "name": "Sammy Davis Jr",
+      "description": "Sammy Davis Jr is one of the all time greats",
+      "url": "https://sammydavis.com",
+      "city": "New York",
+      "image": "sammy.jpg"
+    },
+    {
+      "id": "71d8",
+      "name": "American Goldfinch",
+      "description": "Helllo this is garbage",
+      "url": "audiohighway.com",
+      "city": "Durham",
+      "image": "https://media.audubon.org/nas_birdapi/4995_Sibl_9780307957900_art_r1.jpg"
+    },
+    {
+      "id": "5364",
+      "name": "Ianasauruseryish",
+      "description": "rtcuyiuvsojndmpa;.\nf'hj",
+      "url": "statefarm.com",
+      "city": "Bloomington",
+      "image": "https://maxrocketmusic.com/wp-content/uploads/2024/03/max-rocket-logo.jpg"
+    },
+    {
+      "id": "5752",
+      "name": "Queen",
+      "description": "Queen is the most amazing awesomest and I am 12",
+      "url": "http://queen.com",
+      "city": "London",
+      "image": "queen.jpg"
+    },
+    {
+      "id": "4343",
+      "name": "Portishead",
+      "description": "Hi tyhere",
+      "url": "",
+      "city": "Portland",
+      "image": ""
+    },
+    {
+      "id": "83a9",
+      "name": "Decemberists",
+      "description": "Great band. ",
+      "url": "https://www.decemberists.com/",
+      "city": "",
+      "image": "https://images.squarespace-cdn.com/content/v1/65bd9709a792fd0dd6b42612/5593ed68-3813-447e-9a33-efc8bd38aeab/Qw2zvvvo.jpeg?format=2500w"
+    },
+    {
+      "id": "d3df",
+      "name": "Imagine Tests",
+      "description": "Imagine that",
+      "url": "http://imaginetests.com",
+      "city": "Testicleville",
+      "image": "imageintests.png"
+    },
+    {
+      "id": "f8f0",
+      "name": "Bay City Rollers",
+      "description": "Penunltimate 70s band",
+      "url": "whatever.cnet",
+      "city": "London",
+      "image": ""
     }
   ]
 }

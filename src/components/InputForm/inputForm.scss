@@ -24,4 +24,11 @@
       padding: 5px 15px;
     }
   }
+
+  .formItem {
+    .errorMsg {
+      font-size: 11px;
+      color: red;
+    }
+  }
 }

@@ -1,15 +1,34 @@
-import react from "react"
+import react, {useEffect, useState} from "react"
+import { useLocation } from "react-router-dom";
+import axios from 'axios'
+import { Artist } from "../../types";
 import './tableView.css';
 
-interface TableViewProps {
-    data: {
+type TableViewItem = {
         id:number
         value:string
         description:string
-    }[],
 }
 
- const TableView = ({data}: TableViewProps) => {
+const TableView = () => {
+   
+const [data, setData] = useState<TableViewItem[]>([]);
+const {state} = useLocation();
+
+useEffect(() => {
+const fetchData = async () => {
+    try {
+        const {data} = await axios.get(state.src)
+        setData((data as any[]).map((data)=>({id:data.id,value: data.name, description: data.description})))
+    } catch(error){
+        console.log("Error fetch data in TableView")
+    }
+}
+
+fetchData()
+
+},[]);
+
 
     return(
         <div>
