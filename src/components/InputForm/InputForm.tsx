@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {useEffect, useState} from 'react';
+import axios from 'axios'
 import './inputForm.css';
 import {
   Formik,
@@ -18,47 +19,42 @@ import * as Yup from 'yup';
 import { TableView } from '../TableView';
 
 interface MyFormValues {
-  value: string;
+  name: string;
+  url: string;
+  city: string;
+  image: string;
   description: string;
 }
 
-interface DataProps {
-    data: {
-        id:number
-        value:string
-        description:string
-    }[],
-}
 
 const AddNewSchema = Yup.object().shape({
-  value: Yup.string()
-    .min(4, 'Must be at least 4 characters')
+  name: Yup.string()
+    .min(3, 'Must be at least 3 characters')
     .max(70, 'Must be less than 70 characters')
     .required('Required'),
   description: Yup.string()
-    .min(4, 'Must be at least 4 characters')
+    .min(3, 'Must be at least 3 characters')
     .max(70, 'Must be less than 70 characters')
-    .required('Required')
+    .required('Required'),
+  city: Yup.string(),
+  url: Yup.string(),
+  image: Yup.string()
+
 });
 
 const InputForm: React.FC<{}> = () => {
 
-const [currData, setCurrData] = useState();
-
 const handleSubmit = async (values: MyFormValues) =>{
-
+  axios.post('http://localhost:5000/artists',values)
+    .then(function(response){
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+  });
 }
 
-  useEffect(()=>{
-  fetch('http://localhost:5000/artists')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    setCurrData(data);
-  })
-},[]);
-
-  const initialValues: MyFormValues = { value: '' , description: ''};
+  const initialValues: MyFormValues = { name: '' , description: '', url: '', city: '', image: ''};
 
   return (
     <main id="new_artist">
@@ -75,18 +71,33 @@ const handleSubmit = async (values: MyFormValues) =>{
         }}
       >
         <Form>
-          <label htmlFor="value">Value</label>
-          <Field id="value" name="value" placeholder="Value" />
-          <ErrorMessage name="value" />
+          <label htmlFor="name">Name</label>
+          <Field id="name" name="name" placeholder="Name" />
+          <ErrorMessage name="name" />
+
+
+          <label htmlFor="city">City</label>
+          <Field id="city" name="city" placeholder="City"/>  
+          <ErrorMessage name="city" />
+
+          <label htmlFor="url">URL</label>
+          <Field id="url" name="url" placeholder="URL"/>  
+          <ErrorMessage name="url" />
+
+
+          <label htmlFor="image">Image</label>
+          <Field id="image" name="image" placeholder="Image"/>  
+          <ErrorMessage name="image" />
+
 
           <label htmlFor="description">Description</label>
-          <Field id="description" name="description" placeholder="Description"/>  
+          <Field id="description" as="textarea" rows="8" name="description" placeholder="Description"/>  
           <ErrorMessage name="description" />
 
           <button type="submit">Submit</button>
         </Form>
       </Formik>
-      <TableView data={currData}/>
+
     </main>
   );
 };

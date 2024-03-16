@@ -16,6 +16,7 @@
   margin-bottom: 25px;
 }
 #new_artist form button {
+  display: block;
   font-size: 18px;
   padding: 5px 15px;
 }/*# sourceMappingURL=inputForm.css.map */

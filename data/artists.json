@@ -7,7 +7,24 @@
       "city": "New York",
       "description": "This is Sapphira Vee",
       "image": "https://f4.bcbits.com/img/a3016735344_10.jpg",
-      "audio": ["mp31.mp3", "mp32.mp3", "mp33.mp3"]
+      "audio": [
+        "mp31.mp3",
+        "mp32.mp3",
+        "mp33.mp3"
+      ]
+    },
+    {
+      "id": "a957",
+      "name": "Prince",
+      "description": "He is very purple"
+    },
+    {
+      "id": "8246",
+      "name": "Max Rocket",
+      "description": "My alter ego",
+      "url": "http://maxrocketmusic.com",
+      "city": "Durham",
+      "image": "https://maxrocketmusic.com/wp-content/uploads/2024/03/max-rocket-logo.jpg"
     }
   ]
 }
