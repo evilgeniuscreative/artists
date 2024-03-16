@@ -9,7 +9,7 @@ const Home: FunctionComponent = () => {
     <div className="chooser">
       <p><a href="/list">List View</a></p>
       <p><a href="/table">Table View</a></p>
-      <p><a href="/new">Form Page</a></p>
+      <p><a href="/form">Form Page</a></p>
     </div>
   
   </main>

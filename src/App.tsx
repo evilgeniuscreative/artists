@@ -19,7 +19,7 @@ function App() {
     <Route path="/" element={<Home />}/>
     <Route index element={<Home />} />
     <Route path="/table" element={<TableView />}></Route>
-    <Route path="/new" element={<InputForm />}></Route>
+    <Route path="/form" element={<InputForm />}></Route>
     <Route path="*" element={<FOF />} />
   </Routes>
 </BrowserRouter>

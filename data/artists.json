@@ -7,7 +7,11 @@
       "city": "New York",
       "description": "This is Sapphira Vee",
       "image": "https://f4.bcbits.com/img/a3016735344_10.jpg",
-      "audio": ["mp31.mp3", "mp32.mp3", "mp33.mp3"]
+      "audio": [
+        "mp31.mp3",
+        "mp32.mp3",
+        "mp33.mp3"
+      ]
     },
     {
       "id": "a957",
@@ -85,6 +89,22 @@
       "url": "whatever.cnet",
       "city": "London",
       "image": ""
+    },
+    {
+      "id": "0569",
+      "name": "Hotty Totty",
+      "description": "They're so hotty totty",
+      "url": "",
+      "city": "Burbank",
+      "image": ""
+    },
+    {
+      "id": "ff9b",
+      "name": "Mister Mister",
+      "description": "All star session players making shit music in the 90s",
+      "url": "http://mistermister.com",
+      "city": "Los Angeles",
+      "image": "barf.jpg"
     }
   ]
 }

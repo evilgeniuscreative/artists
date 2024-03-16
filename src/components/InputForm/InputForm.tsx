@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useEffect, useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import axios from 'axios'
 import './inputForm.css';
 import {
@@ -11,7 +11,7 @@ import {
   ErrorMessage
 } from 'formik';
 import {string, object} from 'yup';
-import { TableView } from '../TableView';
+
 
 interface MyFormValues {
   name: string;
@@ -40,6 +40,8 @@ const AddNewSchema = object().shape({
 const InputForm: React.FC<{}> = () => {
 
 const navigate = useNavigate();
+const {state:{editData}} = useLocation();
+
 
 const handleSubmit = async (values: MyFormValues, actions: FormikHelpers<MyFormValues>)=>{
   actions.setSubmitting(false);
@@ -49,12 +51,12 @@ const handleSubmit = async (values: MyFormValues, actions: FormikHelpers<MyFormV
   }
 }
 
-
-  const initialValues: MyFormValues = { name: '' , description: '', url: '', city: '', image: ''};
+console.log({editData});
+  const initialValues: MyFormValues = { name: editData.name || '' , description: editData.description || '', url: editData.url ||'', city: editData.city || '', image: editData.image || ''};
 
   return (
     <main id="new_artist">
-      <h1>Add New Artist</h1>
+      <h1>{editData.id ? "Edit ": "New "} Artist</h1>
       <Formik
         initialValues={initialValues}
         validationSchema={AddNewSchema}
@@ -62,11 +64,10 @@ const handleSubmit = async (values: MyFormValues, actions: FormikHelpers<MyFormV
       >
         <Form>
           <div className='formItem'>
-         <label htmlFor="name">Name</label>
+          <label htmlFor="name">Name</label>
           <Field id="name" name="name" placeholder="Name" />
           <span className="errorMsg"><ErrorMessage name="name" /></span>
           </div>
-
 
 
           <label htmlFor="city">City</label>
@@ -87,7 +88,7 @@ const handleSubmit = async (values: MyFormValues, actions: FormikHelpers<MyFormV
           <Field id="description" as="textarea" rows="8" name="description" placeholder="Description"/>  
           <ErrorMessage name="description" />
 
-          <button type="submit">Submit</button>
+          <button type="submit">{editData.id ?"Update":"Submit" }</button>
         </Form>
       </Formik>
 
