@@ -46,6 +46,7 @@ const modifiedData = data.map((data)=>({id:data.id,value: data.name, description
                         <th>Value</th>
                         <th>Description</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,7 +55,13 @@ const modifiedData = data.map((data)=>({id:data.id,value: data.name, description
                          <tr key={item.id}>
                                <td>{item.value}</td>
                                <td>{item.description}</td> 
-                               <td><button onClick={()=> navigate('/form',{state:{editData: data[index]}})}>Edit</button></td>
+                               <td><button className="edit" onClick={()=> navigate('/form',{state:{editData: data[index]}})}>Edit</button></td>
+                               <td><a className="delete" onClick={async ()=>{ 
+                                 if( window.confirm('Do you want to delete this?') === true )  {
+                                   await axios.delete(`http://localhost:5000/artists/${item.id}`);
+                                   setData(prev=>prev.filter((element)=>element.id !==item.id))
+                                 }
+                               }}>Delete</a></td>
                         </tr>
                     )
                 })}

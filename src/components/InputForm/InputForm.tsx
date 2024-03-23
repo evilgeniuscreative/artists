@@ -1,8 +1,8 @@
-import * as React from 'react';
+import {Fragment} from 'react';
 import {useEffect, useState} from 'react';
 import { useNavigate,useLocation } from 'react-router-dom';
 import { FormItem } from '..';
-import axios from 'axios'
+import axios, { AxiosResponse } from 'axios'
 import './inputForm.css';
 import {
   Formik,
@@ -44,10 +44,14 @@ const navigate = useNavigate();
 const {state:{editData, pageTitle}} = useLocation();
 
 
-const handleSubmit = async (values: MyFormValues, actions: FormikHelpers<MyFormValues>)=>{
-  actions.setSubmitting(false);
-  const response  = await axios.post('http://localhost:5000/artists',values);
-  if(response.data){
+const handleSubmit = async (values: MyFormValues)=>{
+let response:  AxiosResponse<any, any>;
+  if(editData?.id){
+     response  = await axios.patch(`http://localhost:5000/artists/${editData.id}`,values);
+  }else{
+    response  = await axios.post('http://localhost:5000/artists',values);
+  }
+ if(response.data){
     navigate('/table', { state: { src:'http://localhost:5000/artists' } });
   }
 }
@@ -69,7 +73,9 @@ const formNames = [{name:'name', placeholder:"Name"},{name:'city', placeholder:"
         <Form>
           {formNames.map((formItem)=>{
           return (
-          <FormItem name={formItem.name} as={formItem.as} placeholder={formItem.placeholder}/>
+            <Fragment key={formItem.name}>
+              <FormItem  name={formItem.name} as={formItem.as} placeholder={formItem.placeholder}/>
+            </Fragment>
           )
           })}
           <button type="submit">{editData?.id ?"Update":"Submit" }</button>

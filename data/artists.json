@@ -35,22 +35,6 @@
       "image": "sammy.jpg"
     },
     {
-      "id": "71d8",
-      "name": "American Goldfinch",
-      "description": "Helllo this is garbage",
-      "url": "audiohighway.com",
-      "city": "Durham",
-      "image": "https://media.audubon.org/nas_birdapi/4995_Sibl_9780307957900_art_r1.jpg"
-    },
-    {
-      "id": "5364",
-      "name": "Ianasauruseryish",
-      "description": "rtcuyiuvsojndmpa;.\nf'hj",
-      "url": "statefarm.com",
-      "city": "Bloomington",
-      "image": "https://maxrocketmusic.com/wp-content/uploads/2024/03/max-rocket-logo.jpg"
-    },
-    {
       "id": "5752",
       "name": "Queen",
       "description": "Queen is the most amazing awesomest and I am 12",
@@ -107,28 +91,12 @@
       "image": "barf.jpg"
     },
     {
-      "id": "2311",
-      "name": "American Goldfinch",
-      "description": "uaUHOIJVKM;LSFDBVDAS",
-      "url": "http://maxrocketmusic.com",
-      "city": "Bloomington",
-      "image": "https://media.audubon.org/nas_birdapi/4995_Sibl_9780307957900_art_r1.jpg"
-    },
-    {
-      "id": "595f",
-      "name": "Ian Kleinfeld ",
-      "description": "Hello there",
-      "url": "audiohighway.com",
-      "city": "Bloomington",
-      "image": "sammy.jpg"
-    },
-    {
-      "id": "6c52",
-      "name": "Elephant",
-      "description": "This is an elephant\n",
-      "url": "http://elephant.com",
-      "city": "New York",
-      "image": "elephant.jpg"
+      "id": "1178",
+      "name": "Queen",
+      "description": "Queen is the most amazing awesomest and I am 12",
+      "url": "http://queen.com",
+      "city": "London Town",
+      "image": "queen.jpg"
     }
   ]
 }
