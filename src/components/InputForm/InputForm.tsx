@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {useEffect, useState} from 'react';
 import { useNavigate,useLocation } from 'react-router-dom';
+import { FormItem } from '..';
 import axios from 'axios'
 import './inputForm.css';
 import {
@@ -11,6 +12,7 @@ import {
   ErrorMessage
 } from 'formik';
 import {string, object} from 'yup';
+
 
 
 interface MyFormValues {
@@ -38,9 +40,8 @@ const AddNewSchema = object().shape({
 });
 
 const InputForm: React.FC<{}> = () => {
-
 const navigate = useNavigate();
-const {state:{editData}} = useLocation();
+const {state:{editData, pageTitle}} = useLocation();
 
 
 const handleSubmit = async (values: MyFormValues, actions: FormikHelpers<MyFormValues>)=>{
@@ -51,44 +52,27 @@ const handleSubmit = async (values: MyFormValues, actions: FormikHelpers<MyFormV
   }
 }
 
-console.log({editData});
-  const initialValues: MyFormValues = { name: editData.name || '' , description: editData.description || '', url: editData.url ||'', city: editData.city || '', image: editData.image || ''};
+
+
+  const initialValues: MyFormValues = { name: editData?.name || '' , description: editData?.description || '', url: editData?.url ||'', city: editData?.city || '', image: editData?.image || ''};
+
+const formNames = [{name:'name', placeholder:"Name"},{name:'city', placeholder:"City"},{name:'url', placeholder:"URL"},{name:'image', placeholder:"Image"},{name:'description', placeholder:"Description",as:"textarea"}]
 
   return (
-    <main id="new_artist">
-      <h1>{editData.id ? "Edit ": "New "} Artist</h1>
+    <main id="new_item">
+      <h1>{editData?.id ? "Edit ": "New "} {pageTitle}</h1>
       <Formik
         initialValues={initialValues}
         validationSchema={AddNewSchema}
         onSubmit={handleSubmit}
       >
         <Form>
-          <div className='formItem'>
-          <label htmlFor="name">Name</label>
-          <Field id="name" name="name" placeholder="Name" />
-          <span className="errorMsg"><ErrorMessage name="name" /></span>
-          </div>
-
-
-          <label htmlFor="city">City</label>
-          <Field id="city" name="city" placeholder="City"/>  
-          <ErrorMessage name="city" />
-
-          <label htmlFor="url">URL</label>
-          <Field id="url" name="url" placeholder="URL"/>  
-          <ErrorMessage name="url" />
-
-
-          <label htmlFor="image">Image</label>
-          <Field id="image" name="image" placeholder="Image"/>  
-          <ErrorMessage name="image" />
-
-
-          <label htmlFor="description">Description</label>
-          <Field id="description" as="textarea" rows="8" name="description" placeholder="Description"/>  
-          <ErrorMessage name="description" />
-
-          <button type="submit">{editData.id ?"Update":"Submit" }</button>
+          {formNames.map((formItem)=>{
+          return (
+          <FormItem name={formItem.name} as={formItem.as} placeholder={formItem.placeholder}/>
+          )
+          })}
+          <button type="submit">{editData?.id ?"Update":"Submit" }</button>
         </Form>
       </Formik>
 

@@ -3,3 +3,4 @@ export * from './TableView';
 export * from './FOF';
 export * from './Home';
 export * from './InputForm';
+export * from './FormItem';

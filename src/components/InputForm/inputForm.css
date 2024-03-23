@@ -1,26 +1,26 @@
-#new_artist h1 {
+#new_item h1 {
   text-align: center;
 }
-#new_artist form {
+#new_item form {
   margin: auto;
   width: 400px;
 }
-#new_artist form label {
+#new_item form label {
   display: block;
   font-weight: 700;
 }
-#new_artist form input {
+#new_item form input {
   display: block;
   font-size: 18px;
   padding: 5px;
   margin-bottom: 25px;
 }
-#new_artist form button {
+#new_item form button {
   display: block;
   font-size: 18px;
   padding: 5px 15px;
 }
-#new_artist .formItem .errorMsg {
+#new_item .formItem .errorMsg {
   font-size: 11px;
   color: red;
-}/*# sourceMappingURL=inputForm.css.map */
+} /*# sourceMappingURL=inputForm.css.map */
