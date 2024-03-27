@@ -17,7 +17,10 @@
     {
       "id": "a957",
       "name": "Prince",
-      "description": "He is very purple"
+      "description": "He is very purple",
+      "url": "prince.com",
+      "city": "Minneapolis",
+      "image": "prince.jpg"
     },
     {
       "id": "8246",

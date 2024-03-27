@@ -1,23 +1,26 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FormItem } from '..';
 import axios, { AxiosResponse } from 'axios';
+import GenerateRandomId from '../../Utils/GenerateRandomId';
 import './albumForm.css';
 import { Formik, Form } from 'formik';
 import { string, object, array } from 'yup';
 
 interface MyFormValues {
-  name: string;
-  url: string;
-  city: string;
-  image: string;
-  description: string;
+  albumId: string;
+  albumName: string;
+  albumDescription: string;
+  albumLength: string;
+  albumCoverImg: string;
+  tracks: string[];
 }
 
 const AddNewSchema = object().shape({
+  albumId: string(),
   albumName: string().min(3, 'Must be at least 3 characters').max(70, 'Must be less than 70 characters').required('Required'),
   albumDescription: string().min(3, 'Must be at least 3 characters').max(70, 'Must be less than 70 characters').required('Required'),
-  length: string(),
+  albumLength: string(),
   samplesUrl: string(),
   albumCoverImg: string(),
   tracks: array().of(string().required('Required').min(3, 'Must be at least 3 characters')),
@@ -25,9 +28,18 @@ const AddNewSchema = object().shape({
 
 const AlbumForm: React.FC<{}> = () => {
   const navigate = useNavigate();
-  const {
-    state: { editData, pageTitle },
-  } = useLocation();
+  console.log('useLocation: ', useLocation());
+
+  const [editData, setEditData] = useState({
+    id: '',
+    albumId: '',
+    albumName: '',
+    albumDescription: '',
+    albumLength: '',
+    albumCoverImg: '',
+    tracks: [''],
+  });
+  const [pageTitle, setPageTitle] = useState('');
 
   const handleSubmit = async (values: MyFormValues) => {
     let response: AxiosResponse<any, any>;
@@ -41,14 +53,22 @@ const AlbumForm: React.FC<{}> = () => {
     }
   };
 
-  const initialValues: MyFormValues = { name: editData?.name || '', description: editData?.description || '', url: editData?.url || '', city: editData?.city || '', image: editData?.image || '' };
+  const initialValues: MyFormValues = {
+    albumId: editData?.albumId || GenerateRandomId(),
+    albumName: editData?.albumName || '',
+    albumDescription: editData?.albumDescription || '',
+    albumLength: editData?.albumLength || '',
+    albumCoverImg: editData?.albumCoverImg || '',
+    tracks: editData?.tracks || '',
+  };
 
   const formNames = [
-    { name: 'name', placeholder: 'Name' },
-    { name: 'city', placeholder: 'City' },
-    { name: 'url', placeholder: 'URL' },
-    { name: 'image', placeholder: 'Image' },
-    { name: 'description', placeholder: 'Description', as: 'textarea' },
+    { name: 'albumId', albumId: '', placeholder: 'hidden' },
+    { name: 'albumName', placeholder: 'Album Name' },
+    { name: 'albumLength', placeholder: 'Album Length' },
+    { name: 'tracks', placeholder: 'Tracks (comma-separated)' },
+    { name: 'albumCoverImg', placeholder: 'Cover Image' },
+    { name: 'albumDescription', placeholder: 'Album Description', as: 'textarea' },
   ];
 
   return (
@@ -61,8 +81,8 @@ const AlbumForm: React.FC<{}> = () => {
         <Form>
           {formNames.map((formItem) => {
             return (
-              <Fragment key={formItem.name}>
-                <FormItem name={formItem.name} as={formItem.as} placeholder={formItem.placeholder}  />
+              <Fragment key={formItem.albumId}>
+                <FormItem name={formItem.name} as={formItem.as} placeholder={formItem.placeholder} />
               </Fragment>
             );
           })}

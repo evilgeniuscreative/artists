@@ -2,8 +2,8 @@
 body {
   background: url('/public/audience.webp') no-repeat center center;
   margin: 50px auto;
-  max-width: 768px;
-  width: 50%;
+  max-width: 1024px;
+  width: 70%;
 }
 
 #home,
@@ -26,6 +26,11 @@ button {
   @include bradius;
   border: $button-border;
   box-shadow: none;
+  padding: $button-padding;
+  transition: all $ttime;
+  &:hover {
+    transition: all $ttime;
+  }
 }
 
 form,

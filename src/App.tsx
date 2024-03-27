@@ -18,7 +18,7 @@ function App() {
         <Route index element={<TableView />} />
         <Route path='/table' element={<TableView />}></Route>
         <Route path='/form' element={<InputForm />}></Route>
-        <Route path='/add-album' element={<AlbumForm />}></Route>
+        <Route path='/album' element={<AlbumForm />}></Route>
         <Route path='*' element={<FOF />} />
       </Routes>
     </BrowserRouter>
@@ -26,11 +26,3 @@ function App() {
 }
 
 export default App;
-
-// <div className="App">
-
-//   {
-//       artists.length? <><ListView data={modifiedData} /> <hr/> <TableView data={modifiedData}/></> : <><div className="loader"></div></>
-//   }
-
-// </div>

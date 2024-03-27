@@ -37,7 +37,7 @@ const TableView = () => {
   return (
     <div>
       <Navigation />
-      <h1>Artist Table View</h1>
+      <h1>Artist List</h1>
       <table>
         <thead>
           <tr>

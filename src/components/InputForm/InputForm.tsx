@@ -1,11 +1,11 @@
 import { Fragment } from 'react';
-import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FormItem } from '..';
 import axios, { AxiosResponse } from 'axios';
 import './inputForm.css';
-import { Formik, FormikHelpers, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 import { string, object } from 'yup';
+import { Navigation } from '../Navigation';
 
 interface MyFormValues {
   name: string;
@@ -28,7 +28,8 @@ const InputForm: React.FC<{}> = () => {
   const {
     state: { editData, pageTitle },
   } = useLocation();
-
+  console.log('useLocation: ', useLocation());
+  
   const handleSubmit = async (values: MyFormValues) => {
     let response: AxiosResponse<any, any>;
     if (editData?.id) {
@@ -52,29 +53,32 @@ const InputForm: React.FC<{}> = () => {
   ];
 
   return (
-    <main id='new_item'>
-      <h1>
-        {editData?.id ? 'Edit ' : 'New '} {pageTitle}
-      </h1>
+    <>
+      <Navigation />
+      <main id='new_item'>
+        <h1>
+          {editData?.id ? 'Edit ' : 'New '} {pageTitle}
+        </h1>
 
-      <Formik initialValues={initialValues} validationSchema={AddNewSchema} onSubmit={handleSubmit}>
-        <Form>
-          {formNames.map((formItem) => {
-            return (
-              <Fragment key={formItem.name}>
-                <FormItem name={formItem.name} as={formItem.as} placeholder={formItem.placeholder} />
-              </Fragment>
-            );
-          })}
-          <button type='submit'>{editData?.id ? 'Update' : 'Submit'}</button>
-          {editData?.id ? (
-            <p className='rightNote'>
-              <a href='add-album'>Add artist albums</a>
-            </p>
-          ) : null}
-        </Form>
-      </Formik>
-    </main>
+        <Formik initialValues={initialValues} validationSchema={AddNewSchema} onSubmit={handleSubmit}>
+          <Form>
+            {formNames.map((formItem) => {
+              return (
+                <Fragment key={formItem.name}>
+                  <FormItem name={formItem.name} as={formItem.as} placeholder={formItem.placeholder} />
+                </Fragment>
+              );
+            })}
+            <button type='submit'>{editData?.id ? 'Update' : 'Submit'}</button>
+            {editData?.id ? (
+              <p className='rightNote'>
+                <a href='album/?new=true'>Add artist albums</a>
+              </p>
+            ) : null}
+          </Form>
+        </Formik>
+      </main>
+    </>
   );
 };
 
