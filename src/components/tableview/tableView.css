@@ -1,20 +1,42 @@
 table {
   margin: auto;
+  border-spacing: 0;
+  border-radius: 5px;
 }
+
 th,
 td {
-  padding: 5px 20px;
-  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border: none;
 }
+th button,
+td button {
+  margin-top: 0;
+}
+
 th {
-  background: #800080;
+  background: #3b7eea;
   color: white;
+  padding: 15px 20px;
 }
-td :nth-child(even) {
-  background: #eee;
+
+tr:nth-child(even) {
+  background: #e4eefe;
+}
+
+tr:hover {
+  background: #649cf6;
 }
 
 .edit,
 .delete {
   cursor: pointer;
 }
+
+thead tr th:first-child {
+  border-top-left-radius: 5px;
+}
+
+thead tr th:last-child {
+  border-top-right-radius: 5px;
+}/*# sourceMappingURL=tableView.css.map */

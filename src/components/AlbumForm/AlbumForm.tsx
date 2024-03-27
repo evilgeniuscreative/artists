@@ -1,11 +1,10 @@
 import { Fragment } from 'react';
-import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FormItem } from '..';
 import axios, { AxiosResponse } from 'axios';
-import './inputForm.css';
-import { Formik, FormikHelpers, Form, Field, ErrorMessage } from 'formik';
-import { string, object } from 'yup';
+import './albumForm.css';
+import { Formik, Form } from 'formik';
+import { string, object, array } from 'yup';
 
 interface MyFormValues {
   name: string;
@@ -16,14 +15,15 @@ interface MyFormValues {
 }
 
 const AddNewSchema = object().shape({
-  name: string().min(3, 'Must be at least 3 characters').max(70, 'Must be less than 70 characters').required('Required'),
-  description: string().min(3, 'Must be at least 3 characters').max(70, 'Must be less than 70 characters').required('Required'),
-  city: string(),
-  url: string(),
-  image: string(),
+  albumName: string().min(3, 'Must be at least 3 characters').max(70, 'Must be less than 70 characters').required('Required'),
+  albumDescription: string().min(3, 'Must be at least 3 characters').max(70, 'Must be less than 70 characters').required('Required'),
+  length: string(),
+  samplesUrl: string(),
+  albumCoverImg: string(),
+  tracks: array().of(string().required('Required').min(3, 'Must be at least 3 characters')),
 });
 
-const InputForm: React.FC<{}> = () => {
+const AlbumForm: React.FC<{}> = () => {
   const navigate = useNavigate();
   const {
     state: { editData, pageTitle },
@@ -62,20 +62,15 @@ const InputForm: React.FC<{}> = () => {
           {formNames.map((formItem) => {
             return (
               <Fragment key={formItem.name}>
-                <FormItem name={formItem.name} as={formItem.as} placeholder={formItem.placeholder} />
+                <FormItem name={formItem.name} as={formItem.as} placeholder={formItem.placeholder}  />
               </Fragment>
             );
           })}
           <button type='submit'>{editData?.id ? 'Update' : 'Submit'}</button>
-          {editData?.id ? (
-            <p className='rightNote'>
-              <a href='add-album'>Add artist albums</a>
-            </p>
-          ) : null}
         </Form>
       </Formik>
     </main>
   );
 };
 
-export { InputForm };
+export { AlbumForm };

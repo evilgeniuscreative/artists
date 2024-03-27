@@ -1,0 +1,29 @@
+@import '../../vars.scss';
+nav#nav {
+  background: white;
+  @include bradius;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  width: 100;
+
+  a.nav-item {
+    cursor: pointer;
+    &:link {
+      color: $link-color;
+    }
+    &:hover {
+      background-color: $link-hover;
+    }
+    &:active {
+      background-color: $link-active;
+    }
+    &:visited {
+      color: $link-color;
+    }
+    background: transparent;
+    color: $link-color;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+}

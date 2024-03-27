@@ -1,0 +1,27 @@
+nav#nav {
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  width: 100;
+}
+nav#nav a.nav-item {
+  cursor: pointer;
+  background: transparent;
+  color: #649cf6;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+nav#nav a.nav-item:link {
+  color: #649cf6;
+}
+nav#nav a.nav-item:hover {
+  background-color: #e4eefe;
+}
+nav#nav a.nav-item:active {
+  background-color: #649cf6;
+}
+nav#nav a.nav-item:visited {
+  color: #649cf6;
+}/*# sourceMappingURL=navigation.css.map */

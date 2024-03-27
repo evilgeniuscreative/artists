@@ -1,20 +1,41 @@
+@import '../../vars.scss';
 table {
   margin: auto;
+  border-spacing: 0;
+  @include bradius;
 }
+
 th,
 td {
-  padding: 5px 20px;
-  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border: none;
+  button {
+    margin-top: 0;
+  }
 }
+
 th {
-  background: #800080;
+  background: $table-header-bg;
   color: white;
+  padding: 15px 20px;
 }
-td :nth-child(even) {
-  background: #eee;
+
+tr:nth-child(even) {
+  background: $link-hover;
+}
+
+tr:hover {
+  background: $link-color;
 }
 
 .edit,
 .delete {
   cursor: pointer;
+}
+
+thead tr th:first-child {
+  border-top-left-radius: 5px;
+}
+thead tr th:last-child {
+  border-top-right-radius: 5px;
 }

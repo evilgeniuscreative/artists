@@ -1,5 +1,5 @@
 body {
-  background: url("/public/audience.webp") no-repeat center center;
+  background: url('/public/audience.webp') no-repeat center center;
   margin: 50px auto;
   max-width: 768px;
   width: 50%;
@@ -15,7 +15,6 @@ form {
 a {
   cursor: pointer;
 }
-
 form,
 #home {
   padding: 20px;
@@ -54,12 +53,14 @@ button {
   margin-top: 10px;
 }
 
-.formItem .errorMsg {
-  font-size: 11px;
-  color: red;
+.formItem {
+  .errorMsg {
+    font-size: 11px;
+    color: red;
+  }
 }
 
 .rightNote {
   font-size: 90%;
   text-align: right;
-}/*# sourceMappingURL=App.css.map */
+}

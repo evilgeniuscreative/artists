@@ -6,7 +6,7 @@
       "url": "https://sapphiravee.bandcamp.com/track/last-ft-jim-marcus",
       "city": "New York",
       "description": "This is Sapphira Vee",
-      "albums":[],
+      "albums": [],
       "image": "https://f4.bcbits.com/img/a3016735344_10.jpg",
       "audio": [
         "mp31.mp3",
@@ -44,52 +44,12 @@
       "image": "queen.jpg"
     },
     {
-      "id": "4343",
-      "name": "Portishead",
-      "description": "Hi tyhere",
-      "url": "",
-      "city": "Portland",
-      "image": ""
-    },
-    {
-      "id": "83a9",
-      "name": "Decemberists",
-      "description": "Great band. ",
-      "url": "https://www.decemberists.com/",
-      "city": "",
-      "image": "https://images.squarespace-cdn.com/content/v1/65bd9709a792fd0dd6b42612/5593ed68-3813-447e-9a33-efc8bd38aeab/Qw2zvvvo.jpeg?format=2500w"
-    },
-    {
-      "id": "d3df",
-      "name": "Imagine Tests",
-      "description": "Imagine that",
-      "url": "http://imaginetests.com",
-      "city": "Testicleville",
-      "image": "imageintests.png"
-    },
-    {
       "id": "f8f0",
       "name": "Bay City Rollers",
       "description": "Penunltimate 70s band",
       "url": "whatever.cnet",
       "city": "London",
       "image": ""
-    },
-    {
-      "id": "0569",
-      "name": "Hotty Totty",
-      "description": "They're so hotty totty",
-      "url": "",
-      "city": "Burbank",
-      "image": ""
-    },
-    {
-      "id": "ff9b",
-      "name": "Mister Mister",
-      "description": "All star session players making shit music in the 90s",
-      "url": "http://mistermister.com",
-      "city": "Los Angeles",
-      "image": "barf.jpg"
     },
     {
       "id": "1178",

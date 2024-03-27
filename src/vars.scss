@@ -1,0 +1,11 @@
+@mixin bradius {
+  border-radius: 5px;
+}
+
+$link-color: #649cf6;
+$link-active: $link-color;
+$link-hover: #e4eefe;
+$link-visited: $link-color;
+$bg-color: white;
+$table-header-bg: #3b7eea;
+$table-border: $link-hover;
