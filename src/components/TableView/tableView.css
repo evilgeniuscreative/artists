@@ -7,7 +7,8 @@ table {
 th,
 td {
   padding: 10px 20px;
-  border: none;
+  border-bottom: 1px solid white;
+  vertical-align: middle;
 }
 th button,
 td button {
@@ -24,13 +25,23 @@ tr:nth-child(even) {
   background: #e4eefe;
 }
 
-tr:hover {
-  background: #649cf6;
+tr {
+  transition: all 0.3s;
 }
 
-.edit,
+tr:hover {
+  background: #e4eefe;
+  transition: all 0.3s;
+}
+
+.edit {
+  font-size: 80%;
+}
+
 .delete {
-  cursor: pointer;
+  font-size: 80%;
+  line-height: 1;
+  vertical-align: middle;
 }
 
 thead tr th:first-child {

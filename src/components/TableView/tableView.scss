@@ -8,10 +8,11 @@ table {
 th,
 td {
   padding: 10px 20px;
-  border: none;
+  border-bottom: 1px solid white;
   button {
     margin-top: 0;
   }
+  vertical-align: middle;
 }
 
 th {
@@ -23,14 +24,21 @@ th {
 tr:nth-child(even) {
   background: $link-hover;
 }
-
+tr {
+  transition: all $ttime;
+}
 tr:hover {
-  background: $link-color;
+  background: $link-hover;
+  transition: all $ttime;
 }
 
-.edit,
+.edit {
+  font-size: 80%;
+}
 .delete {
-  cursor: pointer;
+  font-size: 80%;
+  line-height: 1;
+  vertical-align: middle;
 }
 
 thead tr th:first-child {

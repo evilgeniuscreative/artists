@@ -1,3 +1,4 @@
+@import './vars.scss';
 body {
   background: url('/public/audience.webp') no-repeat center center;
   margin: 50px auto;
@@ -12,9 +13,21 @@ form {
   border-radius: 5px;
 }
 
-a {
+a,
+button {
   cursor: pointer;
 }
+
+button {
+  background-color: $button-bg;
+  &:hover {
+    background-color: $button-hover;
+  }
+  @include bradius;
+  border: $button-border;
+  box-shadow: none;
+}
+
 form,
 #home {
   padding: 20px;

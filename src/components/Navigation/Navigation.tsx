@@ -6,15 +6,15 @@ const Navigation = () => {
   return (
     <div>
       <nav id='nav'>
-        <Link className='nav-item' to='/'>
-          Home
+        <Link to='/'>
+          <span className='nav-item'>Home</span>
         </Link>
-        <Link className='nav-item' to='/table'>
-          Table View
+        <Link to='/table'>
+          <span className='nav-item'>Artist List</span>
         </Link>
 
-        <Link className='nav-item' to='/form' state={{ pageTitle: 'Artist' }}>
-          Form
+        <Link to='/form' state={{ pageTitle: 'Artist' }}>
+          <span className='nav-item'>Add</span>
         </Link>
       </nav>
     </div>

@@ -6,22 +6,22 @@ nav#nav {
   padding: 0;
   width: 100;
 }
-nav#nav a.nav-item {
-  cursor: pointer;
+nav#nav span.nav-item {
+  display: inline-block;
   background: transparent;
   color: #649cf6;
   padding: 10px 20px;
   text-decoration: none;
 }
-nav#nav a.nav-item:link {
+nav#nav span.nav-item:link {
   color: #649cf6;
 }
-nav#nav a.nav-item:hover {
+nav#nav span.nav-item:hover {
   background-color: #e4eefe;
 }
-nav#nav a.nav-item:active {
+nav#nav span.nav-item:active {
   background-color: #649cf6;
 }
-nav#nav a.nav-item:visited {
+nav#nav span.nav-item:visited {
   color: #649cf6;
 }/*# sourceMappingURL=navigation.css.map */

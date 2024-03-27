@@ -12,8 +12,19 @@ form {
   border-radius: 5px;
 }
 
-a {
+a,
+button {
   cursor: pointer;
+}
+
+button {
+  background-color: #649cf6;
+  border-radius: 5px;
+  border: 1px solid #649cf6;
+  box-shadow: none;
+}
+button:hover {
+  background-color: #e4eefe;
 }
 
 form,

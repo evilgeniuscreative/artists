@@ -7,8 +7,8 @@ nav#nav {
   padding: 0;
   width: 100;
 
-  a.nav-item {
-    cursor: pointer;
+  span.nav-item {
+    display: inline-block;
     &:link {
       color: $link-color;
     }
