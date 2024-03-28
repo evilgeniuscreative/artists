@@ -1,0 +1,15 @@
+.artist-detail .detail .artist-image {
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 20px;
+  overflow: hidden;
+  width: 300px;
+}
+.artist-detail .detail .artist-image img {
+  border-radius: 5px;
+  max-width: 100%;
+}
+.artist-detail .detail .artist-info {
+  display: inline-block;
+  vertical-align: top;
+}/*# sourceMappingURL=artistDetail.css.map */

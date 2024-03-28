@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { Navigation } from '../Navigation';
+import './artistDetail.css';
 
 type Artist = {
   id: string;
@@ -58,12 +59,23 @@ const ArtistDetail = () => {
         {modifiedData.map((artist) => {
           console.log('modifiedData: ', modifiedData);
           return (
-            <section key={artistId}>
+            <section className='artist-detail' key={artistId}>
               <header>
                 <h2>{artist.name}</h2>
               </header>
               <article>
-                <p>{artist.description}</p>
+                <div className='detail'>
+                  <a className='artist-image' href={artist.url} title={artist.url} target='_blank' rel='noreferrer'>
+                    <img src={artist.image} alt={artist.name} />
+                  </a>
+                  <section className='artist-info'>
+                    <p>{artist.description}</p>
+                    <p>
+                      <strong>Url: </strong>
+                      <a href={artist.url}>{artist.url}</a>
+                    </p>
+                  </section>
+                </div>
               </article>
               <footer className='rightNote'>
                 <button className='edit' onClick={() => navigate('/form', { state: { editData: modifiedData[0] } })}>

@@ -46,6 +46,10 @@ tr:hover {
   vertical-align: middle;
 }
 
+.image-cell {
+  width: 50px;
+}
+
 thead tr th:first-child {
   border-top-left-radius: 5px;
 }

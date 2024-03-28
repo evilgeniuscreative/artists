@@ -1,6 +1,7 @@
 import react, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import truncate from '../../Utils/TruncateText';
 import { Navigation } from '../Navigation';
 import './tableView.css';
 
@@ -25,7 +26,7 @@ const TableView = () => {
     fetchData();
   }, []);
 
-  const modifiedData = data.map((data) => ({ artistId: data.id, value: data.name, description: data.description }));
+  const modifiedData = data.map((data) => ({ artistId: data.id, value: data.name, description: data.description, image: data.image }));
 
   return (
     <div>
@@ -34,6 +35,7 @@ const TableView = () => {
       <table>
         <thead>
           <tr>
+            <th></th>
             <th>Value</th>
             <th>Description</th>
             <th></th>
@@ -43,13 +45,22 @@ const TableView = () => {
         </thead>
         <tbody>
           {modifiedData.map((item, index) => {
-   
             return (
               <tr key={item.artistId}>
+                <td className='image-cell'>
+                  <a href={`artist-detail/?id=${item.artistId}`}>
+                    <span title={item.value} className='thumbnail-image' style={{ backgroundImage: `url(${item.image || '/noimage.png'})` }}></span>
+                  </a>
+                </td>
                 <td>
                   <a href={`artist-detail/?id=${item.artistId}`}>{item.value}</a>
                 </td>
-                <td>{item.description}</td>
+                <td>
+                  {truncate(140, item.description)} ...
+                  <a className='edit' href={`artist-detail/?id=${item.artistId}`}>
+                    [ more ]
+                  </a>
+                </td>
                 <td>
                   <button className='edit' onClick={() => navigate('/form', { state: { editData: data[index] } })}>
                     Edit

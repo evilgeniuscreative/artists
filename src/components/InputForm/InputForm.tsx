@@ -19,7 +19,7 @@ interface MyFormValues {
 const AddNewSchema = object().shape({
   id: string(),
   name: string().min(3, 'Must be at least 3 characters').max(70, 'Must be less than 70 characters').required('Required'),
-  description: string().min(3, 'Must be at least 3 characters').max(70, 'Must be less than 70 characters').required('Required'),
+  description: string().min(3, 'Must be at least 3 characters').max(300, 'Must be less than 300 characters').required('Required'),
   city: string(),
   url: string(),
   image: string(),

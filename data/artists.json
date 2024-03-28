@@ -8,15 +8,19 @@
       "description": "This is Sapphira Vee",
       "albums": [],
       "image": "https://f4.bcbits.com/img/a3016735344_10.jpg",
-      "audio": ["mp31.mp3", "mp32.mp3", "mp33.mp3"]
+      "audio": [
+        "mp31.mp3",
+        "mp32.mp3",
+        "mp33.mp3"
+      ]
     },
     {
       "id": "a957",
       "name": "Prince",
       "description": "He is very purple",
       "url": "prince.com",
-      "city": "Minneapolis",
-      "image": "prince.jpg"
+      "city": "",
+      "image": "https://www.rollingstone.com/wp-content/uploads/2019/11/prince-1999-feature.jpg"
     },
     {
       "id": "8246",
@@ -35,18 +39,18 @@
     {
       "id": "37ae",
       "name": "Sammy Davis Jr",
-      "description": "Sammy Davis Jr is one of the all time greats",
+      "description": "Sammy Davis Junior is one of the all-time greats and I would've love to see him in concert if he wasn't already dead and buried back in the 1980s probably give her retake or something like that",
       "url": "https://sammydavis.com",
       "city": "New York",
-      "image": "sammy.jpg"
+      "image": "https://pyxis.nymag.com/v1/imgs/b59/fef/8a4631818ebd2a5414a6140729f1cc2ddd-18-sammy-davis-jr.rsquare.w330.jpg"
     },
     {
       "id": "5752",
       "name": "Queen",
-      "description": "Queen is the most amazing awesomest and I am 12",
+      "description": "Don't stop me now",
       "url": "http://queen.com",
       "city": "London",
-      "image": "queen.jpg"
+      "image": "https://hanazawaoetari.files.wordpress.com/2013/11/queen-band-queen-band.png"
     },
     {
       "id": "f8f0",
@@ -55,14 +59,6 @@
       "url": "whatever.cnet",
       "city": "London",
       "image": ""
-    },
-    {
-      "id": "1178",
-      "name": "Queen",
-      "description": "Queen is the most amazing awesomest and I am 12",
-      "url": "http://queen.com",
-      "city": "London Town",
-      "image": "queen.jpg"
     }
   ]
 }
