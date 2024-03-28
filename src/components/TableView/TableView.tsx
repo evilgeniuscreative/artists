@@ -4,12 +4,6 @@ import axios from 'axios';
 import { Navigation } from '../Navigation';
 import './tableView.css';
 
-type TableViewItem = {
-  id: number;
-  value: string;
-  description: string;
-};
-
 const TableView = () => {
   const [data, setData] = useState<any[]>([]);
   const [currentSource, setCurrentSource] = useState('http://localhost:5000/artists');
@@ -19,7 +13,6 @@ const TableView = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log('sources', currentSource);
       try {
         //TODO: change to state.src later
         const { data } = await axios.get(currentSource);
@@ -32,7 +25,7 @@ const TableView = () => {
     fetchData();
   }, []);
 
-  const modifiedData = data.map((data) => ({ id: data.id, value: data.name, description: data.description }));
+  const modifiedData = data.map((data) => ({ artistId: data.id, value: data.name, description: data.description }));
 
   return (
     <div>
@@ -51,8 +44,10 @@ const TableView = () => {
         <tbody>
           {modifiedData.map((item, index) => {
             return (
-              <tr key={item.id}>
-                <td>{item.value}</td>
+              <tr key={item.artistId}>
+                <td>
+                  <a href={`artist-detail/?id=${item.artistId}`}>{item.value}</a>
+                </td>
                 <td>{item.description}</td>
                 <td>
                   <button className='edit' onClick={() => navigate('/form', { state: { editData: data[index] } })}>
@@ -64,8 +59,8 @@ const TableView = () => {
                     className='delete'
                     onClick={async () => {
                       if (window.confirm('Do you want to delete this?') === true) {
-                        await axios.delete(`http://localhost:5000/artists/${item.id}`);
-                        setData((prev) => prev.filter((element) => element.id !== item.id));
+                        await axios.delete(`http://localhost:5000/artists/${item.artistId}`);
+                        setData((prev) => prev.filter((element) => element.id !== item.artistId));
                       }
                     }}
                   >

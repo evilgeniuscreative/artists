@@ -1,18 +1,14 @@
 {
   "artists": [
     {
-      "id": "0",
+      "id": "xi8d",
       "name": "Sappira Vee",
       "url": "https://sapphiravee.bandcamp.com/track/last-ft-jim-marcus",
       "city": "New York",
       "description": "This is Sapphira Vee",
       "albums": [],
       "image": "https://f4.bcbits.com/img/a3016735344_10.jpg",
-      "audio": [
-        "mp31.mp3",
-        "mp32.mp3",
-        "mp33.mp3"
-      ]
+      "audio": ["mp31.mp3", "mp32.mp3", "mp33.mp3"]
     },
     {
       "id": "a957",
@@ -28,7 +24,13 @@
       "description": "My alter ego",
       "url": "http://maxrocketmusic.com",
       "city": "Durham",
-      "image": "https://maxrocketmusic.com/wp-content/uploads/2024/03/max-rocket-logo.jpg"
+      "image": "https://maxrocketmusic.com/wp-content/uploads/2024/03/max-rocket-logo.jpg",
+      "albumId": "GeGX2cfgnG",
+      "albumName": "Soulmate of the Month Club",
+      "albumDescription": "Quirky love songs",
+      "albumLength": "8 songs",
+      "albumCoverImg": "",
+      "tracks": "Soulmate of the Month Club, 1959, Pitstache, Hand Me Down Love, Everyday Love Song, Love is a Drug"
     },
     {
       "id": "37ae",

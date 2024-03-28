@@ -5,46 +5,54 @@ import axios, { AxiosResponse } from 'axios';
 import GenerateRandomId from '../../Utils/GenerateRandomId';
 import './albumForm.css';
 import { Formik, Form } from 'formik';
-import { string, object, array } from 'yup';
+import { string, object } from 'yup';
+
+
 
 interface MyFormValues {
+  id: string;
   albumId: string;
   albumName: string;
   albumDescription: string;
   albumLength: string;
   albumCoverImg: string;
-  tracks: string[];
+  tracks: string;
 }
 
 const AddNewSchema = object().shape({
+  id: string(),
   albumId: string(),
   albumName: string().min(3, 'Must be at least 3 characters').max(70, 'Must be less than 70 characters').required('Required'),
   albumDescription: string().min(3, 'Must be at least 3 characters').max(70, 'Must be less than 70 characters').required('Required'),
   albumLength: string(),
   samplesUrl: string(),
   albumCoverImg: string(),
-  tracks: array().of(string().required('Required').min(3, 'Must be at least 3 characters')),
+  tracks: string().required('Required').min(3, 'Must be at least 3 characters'),
 });
 
 const AlbumForm: React.FC<{}> = () => {
   const navigate = useNavigate();
   console.log('useLocation: ', useLocation());
 
+  const queryParameters = new URLSearchParams(window.location.search);
+  const isNew = queryParameters.get('new');
+  const id = queryParameters.get('id');
+
   const [editData, setEditData] = useState({
-    id: '',
+    id: id,
     albumId: '',
     albumName: '',
     albumDescription: '',
     albumLength: '',
     albumCoverImg: '',
-    tracks: [''],
+    tracks: '',
   });
   const [pageTitle, setPageTitle] = useState('');
 
   const handleSubmit = async (values: MyFormValues) => {
     let response: AxiosResponse<any, any>;
-    if (editData?.id) {
-      response = await axios.patch(`http://localhost:5000/artists/${editData.id}`, values);
+    if (id) {
+      response = await axios.patch(`http://localhost:5000/artists/${id}`, values);
     } else {
       response = await axios.post('http://localhost:5000/artists', values);
     }
@@ -54,6 +62,7 @@ const AlbumForm: React.FC<{}> = () => {
   };
 
   const initialValues: MyFormValues = {
+    id: editData?.id || '',
     albumId: editData?.albumId || GenerateRandomId(),
     albumName: editData?.albumName || '',
     albumDescription: editData?.albumDescription || '',
@@ -63,6 +72,7 @@ const AlbumForm: React.FC<{}> = () => {
   };
 
   const formNames = [
+    { name: 'id', id: '', placeholder: '' },
     { name: 'albumId', albumId: '', placeholder: 'hidden' },
     { name: 'albumName', placeholder: 'Album Name' },
     { name: 'albumLength', placeholder: 'Album Length' },

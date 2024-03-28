@@ -8,6 +8,7 @@ import { string, object } from 'yup';
 import { Navigation } from '../Navigation';
 
 interface MyFormValues {
+  id: string;
   name: string;
   url: string;
   city: string;
@@ -16,6 +17,7 @@ interface MyFormValues {
 }
 
 const AddNewSchema = object().shape({
+  id: string(),
   name: string().min(3, 'Must be at least 3 characters').max(70, 'Must be less than 70 characters').required('Required'),
   description: string().min(3, 'Must be at least 3 characters').max(70, 'Must be less than 70 characters').required('Required'),
   city: string(),
@@ -29,7 +31,7 @@ const InputForm: React.FC<{}> = () => {
     state: { editData, pageTitle },
   } = useLocation();
   console.log('useLocation: ', useLocation());
-  
+
   const handleSubmit = async (values: MyFormValues) => {
     let response: AxiosResponse<any, any>;
     if (editData?.id) {
@@ -42,9 +44,17 @@ const InputForm: React.FC<{}> = () => {
     }
   };
 
-  const initialValues: MyFormValues = { name: editData?.name || '', description: editData?.description || '', url: editData?.url || '', city: editData?.city || '', image: editData?.image || '' };
+  const initialValues: MyFormValues = {
+    id: editData?.id || '',
+    name: editData?.name || '',
+    description: editData?.description || '',
+    url: editData?.url || '',
+    city: editData?.city || '',
+    image: editData?.image || '',
+  };
 
   const formNames = [
+    { name: 'id', placeholder: 'ID' },
     { name: 'name', placeholder: 'Name' },
     { name: 'city', placeholder: 'City' },
     { name: 'url', placeholder: 'URL' },
@@ -52,6 +62,7 @@ const InputForm: React.FC<{}> = () => {
     { name: 'description', placeholder: 'Description', as: 'textarea' },
   ];
 
+  console.log('editData: ', editData);
   return (
     <>
       <Navigation />
@@ -72,7 +83,7 @@ const InputForm: React.FC<{}> = () => {
             <button type='submit'>{editData?.id ? 'Update' : 'Submit'}</button>
             {editData?.id ? (
               <p className='rightNote'>
-                <a href='album/?new=true'>Add artist albums</a>
+                <a href={`/album/?new=true&id=${editData.id}`}>Add artist albums</a>
               </p>
             ) : null}
           </Form>

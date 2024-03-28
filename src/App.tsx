@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import { Artist } from './types';
-import { TableView, FOF, InputForm } from './components/';
+
+import { TableView, FOF, InputForm, ArtistDetail } from './components/';
 import { AlbumForm } from './components/AlbumForm/AlbumForm';
 
 // TODO: STYLING FOR THE TABLE VIEW
@@ -19,6 +19,7 @@ function App() {
         <Route path='/table' element={<TableView />}></Route>
         <Route path='/form' element={<InputForm />}></Route>
         <Route path='/album' element={<AlbumForm />}></Route>
+        <Route path='/artist-detail' element={<ArtistDetail />}></Route>
         <Route path='*' element={<FOF />} />
       </Routes>
     </BrowserRouter>
