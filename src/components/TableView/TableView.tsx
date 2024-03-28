@@ -43,6 +43,7 @@ const TableView = () => {
         </thead>
         <tbody>
           {modifiedData.map((item, index) => {
+   
             return (
               <tr key={item.artistId}>
                 <td>

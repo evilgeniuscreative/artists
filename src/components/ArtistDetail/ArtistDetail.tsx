@@ -46,7 +46,7 @@ const ArtistDetail = () => {
   }, []);
 
   console.log('artistData a', artistData);
-  const modifiedData = artistData.map((d) => ({ artistId: d.id, name: d.name, description: d.description, image: d.image, url: d.url }));
+  const modifiedData = artistData.map((d) => ({ id: d.id, artistId: d.id, name: d.name, description: d.description, image: d.image, url: d.url }));
 
   return (
     <div>
@@ -55,7 +55,8 @@ const ArtistDetail = () => {
       <main>
         <h1>Artist Detail</h1>
 
-        {modifiedData.map((artist, index) => {
+        {modifiedData.map((artist) => {
+          console.log('modifiedData: ', modifiedData);
           return (
             <section key={artistId}>
               <header>
@@ -64,7 +65,11 @@ const ArtistDetail = () => {
               <article>
                 <p>{artist.description}</p>
               </article>
-              <footer></footer>
+              <footer className='rightNote'>
+                <button className='edit' onClick={() => navigate('/form', { state: { editData: modifiedData[0] } })}>
+                  Edit
+                </button>
+              </footer>
             </section>
           );
         })}
