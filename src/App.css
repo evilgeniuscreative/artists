@@ -5,9 +5,9 @@ body {
   width: 70%;
 }
 
-#home,
 table,
-form {
+form,
+main {
   background: white;
   border-radius: 5px;
 }
@@ -33,16 +33,16 @@ button:hover {
 }
 
 form,
-#home {
+main {
   padding: 20px;
+  margin-top: 20px;
 }
 
 h1 {
+  border-bottom: 2px solid #e4eefe;
   margin: 10px auto;
-  max-width: 768px;
   padding: 10px 30px;
   text-align: center;
-  width: 50%;
 }
 
 label {
