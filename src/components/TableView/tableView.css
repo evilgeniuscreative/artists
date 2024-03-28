@@ -16,6 +16,10 @@ td button {
   margin-top: 0;
 }
 
+td a {
+  white-space: nowrap;
+}
+
 th {
   background: #3b7eea;
   color: white;

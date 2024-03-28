@@ -84,11 +84,14 @@ button {
 }
 
 .rightNote {
-  display: inline-block;
+  display: block;
   font-size: 90%;
   text-align: right;
 }
 
+.no-decoration {
+  text-decoration: none;
+}
 .thumbnail-image {
   @include bradius;
   display: block;

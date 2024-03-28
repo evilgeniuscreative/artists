@@ -8,37 +8,48 @@
       "description": "This is Sapphira Vee",
       "albums": [],
       "image": "https://f4.bcbits.com/img/a3016735344_10.jpg",
-      "audio": [
-        "mp31.mp3",
-        "mp32.mp3",
-        "mp33.mp3"
-      ]
+      "audio": ["mp31.mp3", "mp32.mp3", "mp33.mp3"]
     },
     {
       "id": "a957",
       "name": "Prince",
-      "description": "He is very purple",
-      "url": "prince.com",
-      "city": "",
-      "image": "https://www.rollingstone.com/wp-content/uploads/2019/11/prince-1999-feature.jpg"
+      "description": "Prince Rogers Nelson (June 7, 1958 – April 21, 2016) was an American singer, multi-instrumentalist, songwriter, record producer, and actor. ",
+      "url": "http://www.prince.com",
+      "city": "Minneapolis",
+      "image": "https://www.rollingstone.com/wp-content/uploads/2019/11/prince-1999-feature.jpg",
+      "albums": [
+        {
+          "albumId": "hgEUqCF83Y",
+          "albumName": "Purple Rain",
+          "albumCoverImg": "https://upload.wikimedia.org/wikipedia/en/9/9c/Princepurplerain.jpg",
+          "albumDescription": "Purple Rain is the sixth studio album by the American singer, songwriter, producer, and multi-instrumentalist Prince. It was released on June 25, 1984, by Warner Bros. Records as the soundtrack album to the 1984 film of the same name. Purple Rain was musically denser than Prince's previous albums, emphasizing full band performances, and multiple layers of guitars, keyboards, electronic synthesizer effects, drum machines, and other instruments.",
+          "albumLength": "43:55",
+          "tracks": "Let's Go Crazy, The Beautiful Ones, Computer Blue, Darling Nikki, Wednesday, Purple Rain, I Would Die 4 U, Baby I'm a Star, Father's Song"
+        }
+      ]
     },
     {
       "id": "8246",
       "name": "Max Rocket",
       "description": "My alter ego",
       "url": "http://maxrocketmusic.com",
-      "city": "Durham",
+      "city": "Durham NC",
       "image": "https://maxrocketmusic.com/wp-content/uploads/2024/03/max-rocket-logo.jpg",
-      "albumId": "GeGX2cfgnG",
-      "albumName": "Soulmate of the Month Club",
-      "albumDescription": "Quirky love songs",
-      "albumLength": "8 songs",
-      "albumCoverImg": "",
-      "tracks": "Soulmate of the Month Club, 1959, Pitstache, Hand Me Down Love, Everyday Love Song, Love is a Drug"
+      "albums": [
+        {
+          "albumId": "GeGX2cfgnG",
+          "albumName": "Soulmate of the Month Club",
+          "albumDescription": "Quirky love songs",
+          "albumLength": "8 songs",
+          "albumCoverImg": "",
+          "tracks": "Soulmate of the Month Club, 1959, Pitstache, Hand Me Down Love, Everyday Love Song, Love is a Drug",
+          "type": "text"
+        }
+      ]
     },
     {
       "id": "37ae",
-      "name": "Sammy Davis Jr",
+      "name": "Sammy Davis, Jr.",
       "description": "Sammy Davis Junior is one of the all-time greats and I would've love to see him in concert if he wasn't already dead and buried back in the 1980s probably give her retake or something like that",
       "url": "https://sammydavis.com",
       "city": "New York",

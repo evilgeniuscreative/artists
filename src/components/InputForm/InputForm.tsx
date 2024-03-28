@@ -14,6 +14,7 @@ interface MyFormValues {
   city: string;
   image: string;
   description: string;
+  type: string;
 }
 
 const AddNewSchema = object().shape({
@@ -23,6 +24,7 @@ const AddNewSchema = object().shape({
   city: string(),
   url: string(),
   image: string(),
+  type: string(),
 });
 
 const InputForm: React.FC<{}> = () => {
@@ -40,7 +42,7 @@ const InputForm: React.FC<{}> = () => {
       response = await axios.post('http://localhost:5000/artists', values);
     }
     if (response.data) {
-      navigate('/table', { state: { src: 'http://localhost:5000/artists' } });
+      navigate(`/artist-detail/?id=${editData.id}`, { state: { src: 'http://localhost:5000/artists' } });
     }
   };
 
@@ -51,6 +53,7 @@ const InputForm: React.FC<{}> = () => {
     url: editData?.url || '',
     city: editData?.city || '',
     image: editData?.image || '',
+    type: editData?.type || 'text',
   };
 
   const formNames = [
@@ -76,7 +79,7 @@ const InputForm: React.FC<{}> = () => {
             {formNames.map((formItem) => {
               return (
                 <Fragment key={formItem.name}>
-                  <FormItem name={formItem.name} as={formItem.as} placeholder={formItem.placeholder} />
+                  <FormItem name={formItem.name} as={formItem.as} placeholder={formItem.placeholder} type={formItem.name === 'id' ? 'hidden' : 'text'} />
                 </Fragment>
               );
             })}

@@ -1,1 +1,7 @@
-/*# sourceMappingURL=inputForm.css.map */
+label[for=id] {
+  display: none;
+}
+
+label[for=albumId] {
+  display: none;
+}/*# sourceMappingURL=inputForm.css.map */

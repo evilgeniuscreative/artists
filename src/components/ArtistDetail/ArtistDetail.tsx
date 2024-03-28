@@ -4,11 +4,21 @@ import axios from 'axios';
 import { Navigation } from '../Navigation';
 import './artistDetail.css';
 
+type Album = {
+  id: string;
+  albumId: string;
+  albumName: string;
+  albumDescription: string;
+  albumLength: string;
+  albumCoverImg: string;
+  tracks: string;
+};
+
 type Artist = {
   id: string;
   name: string;
   description: string;
-  albums: string[];
+  albums: Album[];
   image: string;
   url: string;
 };
@@ -47,7 +57,7 @@ const ArtistDetail = () => {
   }, []);
 
   console.log('artistData a', artistData);
-  const modifiedData = artistData.map((d) => ({ id: d.id, artistId: d.id, name: d.name, description: d.description, image: d.image, url: d.url }));
+  const modifiedData = artistData.map((d) => ({ id: d.id, artistId: d.id, name: d.name, description: d.description, image: d.image, url: d.url, albums: d.albums }));
 
   return (
     <div>
@@ -70,6 +80,46 @@ const ArtistDetail = () => {
                   </a>
                   <section className='artist-info'>
                     <p>{artist.description}</p>
+                    {artist.albums.length > 0 ? (
+                      <div>
+                        <p>
+                          <strong>Albums</strong>
+                          <br />
+                        </p>
+
+                        {artist.albums.map((album: Album) => {
+                          album['id'] = artist.id;
+                          console.log('album: ', album);
+                          return (
+                            <div>
+                              <div className='album-thumbnail'>
+                                <img src={album.albumCoverImg} alt={album.albumName} />
+                                <div className='album-full'>
+                                  <img src={album.albumCoverImg} alt={album.albumName} />
+                                </div>
+                              </div>
+                              <ul>
+                                {/* <li key={album.albumId}> */}
+                                {/* <a className='edit' onClick={() => navigate('/album', { state: { editData: album } })}>
+                                    [ Edit ]
+                                  </a> */}
+                                {/* </li> */}
+                                <li>{album.albumDescription}</li>
+                                <li>
+                                  {album.albumLength}
+                                  <ul>
+                                    {album.tracks.split(',').map((track) => {
+                                      return <li key={track}>{track}</li>;
+                                    })}
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ) : null}
+
                     <p>
                       <strong>Url: </strong>
                       <a href={artist.url}>{artist.url}</a>

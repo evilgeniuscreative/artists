@@ -16,6 +16,9 @@ td {
   vertical-align: middle;
 }
 
+td a {
+  white-space: nowrap;
+}
 th {
   background: $table-header-bg;
   color: white;

@@ -53,10 +53,12 @@ const TableView = () => {
                   </a>
                 </td>
                 <td>
-                  <a href={`artist-detail/?id=${item.artistId}`}>{item.value}</a>
+                  <a className='no-decoration' href={`artist-detail/?id=${item.artistId}`}>
+                    {item.value}
+                  </a>
                 </td>
                 <td>
-                  {truncate(140, item.description)} ...
+                  {truncate(125, item.description)} ...
                   <a className='edit' href={`artist-detail/?id=${item.artistId}`}>
                     [ more ]
                   </a>
