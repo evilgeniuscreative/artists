@@ -1,5 +1,5 @@
-import { Fragment } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Fragment, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { FormItem } from '..';
 import axios, { AxiosResponse } from 'axios';
 import './inputForm.css';
@@ -14,7 +14,6 @@ interface MyFormValues {
   city: string;
   image: string;
   description: string;
-  type: string;
 }
 
 const AddNewSchema = object().shape({
@@ -24,38 +23,56 @@ const AddNewSchema = object().shape({
   city: string(),
   url: string(),
   image: string(),
-  type: string(),
 });
 
 const InputForm: React.FC<{}> = () => {
+  const [userData, setUserData] = useState<MyFormValues>({
+    id: '',
+    name: '',
+    url: '',
+    city: '',
+    image: '',
+    description: '',
+  });
+
   const navigate = useNavigate();
-  const {
-    state: { editData, pageTitle },
-  } = useLocation();
-  console.log('useLocation: ', useLocation());
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    async function fetchExistingUser() {
+      try {
+        const res = await axios.get(`http://localhost:5000/artists/${id}`);
+        setUserData(res.data);
+      } catch (error) {
+        console.log('Error fetching user data', error);
+      }
+    }
+    if (id) {
+      fetchExistingUser();
+    }
+  }, []);
 
   const handleSubmit = async (values: MyFormValues) => {
     let response: AxiosResponse<any, any>;
-    if (editData?.id) {
-      response = await axios.patch(`http://localhost:5000/artists/${editData.id}`, values);
+    if (id) {
+      response = await axios.patch(`http://localhost:5000/artists/${id}`, values);
     } else {
       response = await axios.post('http://localhost:5000/artists', values);
     }
-    if (response.data) {
-      navigate(`/artist-detail/?id=${editData.id}`, { state: { src: 'http://localhost:5000/artists' } });
-    }
+    if (response.data) navigate(`/artist-detail/?id=${id}`, { state: { src: 'http://localhost:5000/artists' } });
   };
 
   const initialValues: MyFormValues = {
-    id: editData?.id || '',
-    name: editData?.name || '',
-    description: editData?.description || '',
-    url: editData?.url || '',
-    city: editData?.city || '',
-    image: editData?.image || '',
-    type: editData?.type || 'text',
+    id: userData.id || '',
+    name: userData.name || '',
+    description: userData.description || '',
+    url: userData.url || '',
+    city: userData.city || '',
+    image: userData.image || '',
   };
 
+  console.log('initialvalues', initialValues);
   const formNames = [
     { name: 'id', placeholder: 'ID' },
     { name: 'name', placeholder: 'Name' },
@@ -64,17 +81,14 @@ const InputForm: React.FC<{}> = () => {
     { name: 'image', placeholder: 'Image' },
     { name: 'description', placeholder: 'Description', as: 'textarea' },
   ];
-
-  console.log('editData: ', editData);
+  console.log({ userData });
   return (
     <>
       <Navigation />
       <main id='new_item'>
-        <h1>
-          {editData?.id ? 'Edit ' : 'New '} {pageTitle}
-        </h1>
+        <h1>{id ? 'Edit ' : 'New '} Artist</h1>
 
-        <Formik initialValues={initialValues} validationSchema={AddNewSchema} onSubmit={handleSubmit}>
+        <Formik initialValues={initialValues} validationSchema={AddNewSchema} onSubmit={handleSubmit} enableReinitialize>
           <Form>
             {formNames.map((formItem) => {
               return (
@@ -83,10 +97,10 @@ const InputForm: React.FC<{}> = () => {
                 </Fragment>
               );
             })}
-            <button type='submit'>{editData?.id ? 'Update' : 'Submit'}</button>
-            {editData?.id ? (
+            <button type='submit'>{userData?.id ? 'Update' : 'Submit'}</button>
+            {userData?.id ? (
               <p className='rightNote'>
-                <a href={`/album/?new=true&id=${editData.id}`}>Add artist albums</a>
+                <a href={`/album/?new=true&id=${userData.id}`}>Add artist albums</a>
               </p>
             ) : null}
           </Form>

@@ -1,5 +1,5 @@
 import react, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import truncate from '../../Utils/TruncateText';
 import { Navigation } from '../Navigation';
@@ -48,25 +48,29 @@ const TableView = () => {
             return (
               <tr key={item.artistId}>
                 <td className='image-cell'>
-                  <a href={`artist-detail/?id=${item.artistId}`}>
+                  <Link to={`artist-detail/?id=${item.artistId}`}>
                     <span title={item.value} className='thumbnail-image' style={{ backgroundImage: `url(${item.image || '/noimage.png'})` }}></span>
-                  </a>
+                  </Link>
                 </td>
                 <td>
-                  <a className='no-decoration' href={`artist-detail/?id=${item.artistId}`}>
+                  <Link className='no-decoration' to={`artist-detail/${item.artistId}`}>
                     {item.value}
-                  </a>
+                  </Link>
                 </td>
                 <td>
                   {truncate(125, item.description)} ...
-                  <a className='edit' href={`artist-detail/?id=${item.artistId}`}>
+                  <Link className='edit' to={`artist-detail/${item.artistId}`}>
                     [ more ]
-                  </a>
+                  </Link>
                 </td>
                 <td>
-                  <button className='edit' onClick={() => navigate('/form', { state: { editData: data[index] } })}>
+                  <Link className='button' to={`/form/${item.artistId}`}>
                     Edit
-                  </button>
+                  </Link>
+
+                  {/* <button className='edit' onClick={() => navigate(`/form/${item.artistId}`, { state: { editData: data[index] } })}>
+                    // Edit //{' '}
+                  </button> */}
                 </td>
                 <td>
                   <a

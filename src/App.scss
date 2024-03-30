@@ -76,6 +76,19 @@ button {
   margin-top: 10px;
 }
 
+.button {
+  @include bradius;
+  background-color: $link-color;
+  color: white;
+  font-size: 80%;
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: all $ttime;
+  &:hover {
+    background-color: $link-hover;
+    transition: all $ttime;
+  }
+}
 .formItem {
   .errorMsg {
     font-size: 11px;

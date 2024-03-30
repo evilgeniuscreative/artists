@@ -19,11 +19,11 @@
       "image": "https://www.rollingstone.com/wp-content/uploads/2019/11/prince-1999-feature.jpg",
       "albums": [
         {
-          "albumId": "hgEUqCF83Y",
-          "albumName": "Purple Rain",
-          "albumCoverImg": "https://upload.wikimedia.org/wikipedia/en/9/9c/Princepurplerain.jpg",
-          "albumDescription": "Purple Rain is the sixth studio album by the American singer, songwriter, producer, and multi-instrumentalist Prince. It was released on June 25, 1984, by Warner Bros. Records as the soundtrack album to the 1984 film of the same name. Purple Rain was musically denser than Prince's previous albums, emphasizing full band performances, and multiple layers of guitars, keyboards, electronic synthesizer effects, drum machines, and other instruments.",
-          "albumLength": "43:55",
+          "id": "hgEUqCF83Y",
+          "name": "Purple Rain",
+          "coverImg": "https://upload.wikimedia.org/wikipedia/en/9/9c/Princepurplerain.jpg",
+          "description": "Purple Rain is the sixth studio album by the American singer, songwriter, producer, and multi-instrumentalist Prince. It was released on June 25, 1984, by Warner Bros. Records as the soundtrack album to the 1984 film of the same name. Purple Rain was musically denser than Prince's previous albums, emphasizing full band performances, and multiple layers of guitars, keyboards, electronic synthesizer effects, drum machines, and other instruments.",
+          "len": 9,
           "tracks": "Let's Go Crazy, The Beautiful Ones, Computer Blue, Darling Nikki, Wednesday, Purple Rain, I Would Die 4 U, Baby I'm a Star, Father's Song"
         }
       ]
@@ -37,11 +37,11 @@
       "image": "https://maxrocketmusic.com/wp-content/uploads/2024/03/max-rocket-logo.jpg",
       "albums": [
         {
-          "albumId": "GeGX2cfgnG",
-          "albumName": "Soulmate of the Month Club",
-          "albumDescription": "Quirky love songs",
-          "albumLength": "8 songs",
-          "albumCoverImg": "",
+          "id": "GeGX2cfgnG",
+          "name": "Soulmate of the Month Club",
+          "description": "Quirky love songs",
+          "len": 8,
+          "coverImg": "",
           "tracks": "Soulmate of the Month Club, 1959, Pitstache, Hand Me Down Love, Everyday Love Song, Love is a Drug",
           "type": "text"
         }

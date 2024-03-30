@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Navigation } from '../Navigation';
 import './artistDetail.css';
 
 type Album = {
+  artistId: string;
   id: string;
-  albumId: string;
-  albumName: string;
-  albumDescription: string;
-  albumLength: string;
-  albumCoverImg: string;
+  name: string;
+  description: string;
+  len: number;
+  coverImg: string;
   tracks: string;
 };
 
@@ -24,9 +24,10 @@ type Artist = {
 };
 
 const ArtistDetail = () => {
-  const queryParameters = new URLSearchParams(window.location.search);
-  const artistId = queryParameters.get('id');
-  console.log('artistId: ', artistId);
+  // const queryParameters = new URLSearchParams(window.location.search);
+  // const artistId = queryParameters.get('id');
+  // console.log('artistId: ', artistId);
+  const { id } = useParams();
 
   const [data, setData] = useState<any[]>([]);
   const [currentSource, setCurrentSource] = useState('http://localhost:5000/artists/');
@@ -42,7 +43,7 @@ const ArtistDetail = () => {
 
         const artistData = data.filter((data: Artist) => {
           console.log('data artist: ', data);
-          return data.id === artistId;
+          return data.id === id;
         });
 
         console.log('artistData: ', artistData);
@@ -56,7 +57,6 @@ const ArtistDetail = () => {
     fetchData();
   }, []);
 
-  console.log('artistData a', artistData);
   const modifiedData = artistData.map((d) => ({ id: d.id, artistId: d.id, name: d.name, description: d.description, image: d.image, url: d.url, albums: d.albums }));
 
   return (
@@ -66,36 +66,35 @@ const ArtistDetail = () => {
       <main>
         <h1>Artist Detail</h1>
 
-        {modifiedData.map((artist) => {
+        {modifiedData.map((details) => {
           console.log('modifiedData: ', modifiedData);
           return (
-            <section className='artist-detail' key={artistId}>
+            <section className='artist-detail' key={id}>
               <header>
-                <h2>{artist.name}</h2>
+                <h2>{details.name}</h2>
               </header>
               <article>
                 <div className='detail'>
-                  <a className='artist-image' href={artist.url} title={artist.url} target='_blank' rel='noreferrer'>
-                    <img src={artist.image} alt={artist.name} />
+                  <a className='artist-image' href={details.url} title={details.url} target='_blank' rel='noreferrer'>
+                    <img src={details.image} alt={details.name} />
                   </a>
                   <section className='artist-info'>
-                    <p>{artist.description}</p>
-                    {artist.albums.length > 0 ? (
+                    <p>{details.description}</p>
+                    {details.albums.length > 0 ? (
                       <div>
                         <p>
                           <strong>Albums</strong>
                           <br />
                         </p>
 
-                        {artist.albums.map((album: Album) => {
-                          album['id'] = artist.id;
+                        {details.albums.map((album: Album) => {
                           console.log('album: ', album);
                           return (
-                            <div>
+                            <div key={album.id}>
                               <div className='album-thumbnail'>
-                                <img src={album.albumCoverImg} alt={album.albumName} />
+                                <img src={album.coverImg} alt={album.name} />
                                 <div className='album-full'>
-                                  <img src={album.albumCoverImg} alt={album.albumName} />
+                                  <img src={album.coverImg} alt={album.name} />
                                 </div>
                               </div>
                               <ul>
@@ -104,9 +103,9 @@ const ArtistDetail = () => {
                                     [ Edit ]
                                   </a> */}
                                 {/* </li> */}
-                                <li>{album.albumDescription}</li>
+                                <li>{album.description}</li>
                                 <li>
-                                  {album.albumLength}
+                                  {album.len}
                                   <ul>
                                     {album.tracks.split(',').map((track) => {
                                       return <li key={track}>{track}</li>;
@@ -122,7 +121,7 @@ const ArtistDetail = () => {
 
                     <p>
                       <strong>Url: </strong>
-                      <a href={artist.url}>{artist.url}</a>
+                      <a href={details.url}>{details.url}</a>
                     </p>
                   </section>
                 </div>
