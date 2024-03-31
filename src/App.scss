@@ -1,6 +1,7 @@
 @import './vars.scss';
 body {
-  background: url('/public/audience.webp') no-repeat center center;
+  background: url('/public/rainbow_bg.webp') no-repeat center center;
+  background-size: cover;
   margin: 50px auto;
   max-width: 1024px;
   width: 70%;
@@ -40,8 +41,7 @@ main {
 }
 
 h1 {
-  border-bottom: 2px solid $link-hover;
-  margin: 10px auto;
+  margin: 10px auto 0;
   padding: 10px 30px;
   text-align: center;
 }
@@ -72,6 +72,20 @@ textarea {
   height: 100px;
 }
 
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:hover {
+    color: $link-hover;
+  }
+  &:visited {
+    color: $link-visited;
+  }
+  &:active {
+    color: $link-active;
+  }
+}
+
 button {
   margin-top: 10px;
 }
@@ -96,6 +110,12 @@ button {
   }
 }
 
+.rainbow-line {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  margin-bottom: 15px;
+}
 .rightNote {
   display: block;
   font-size: 90%;

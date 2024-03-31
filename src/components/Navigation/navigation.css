@@ -1,6 +1,5 @@
 nav#nav {
-  background: white;
-  border-radius: 5px;
+  background: transparent;
   display: flex;
   justify-content: space-around;
   padding: 0;
@@ -9,19 +8,19 @@ nav#nav {
 nav#nav span.nav-item {
   display: inline-block;
   background: transparent;
-  color: #649cf6;
+  color: #356dc7;
   padding: 10px 20px;
   text-decoration: none;
 }
 nav#nav span.nav-item:link {
-  color: #649cf6;
+  color: #356dc7;
 }
 nav#nav span.nav-item:hover {
-  background-color: #e4eefe;
+  background-color: #3671cf;
 }
 nav#nav span.nav-item:active {
-  background-color: #649cf6;
+  background-color: #356dc7;
 }
 nav#nav span.nav-item:visited {
-  color: #649cf6;
+  color: #356dc7;
 }/*# sourceMappingURL=navigation.css.map */

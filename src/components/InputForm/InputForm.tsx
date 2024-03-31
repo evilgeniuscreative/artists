@@ -6,6 +6,7 @@ import './inputForm.css';
 import { Formik, Form } from 'formik';
 import { string, object } from 'yup';
 import { Navigation } from '../Navigation';
+import { PageTitle } from '../PageTitle';
 
 interface MyFormValues {
   id: string;
@@ -84,10 +85,11 @@ const InputForm: React.FC<{}> = () => {
   console.log({ userData });
   return (
     <>
+      <PageTitle title={id ? 'Edit Artist' : 'Add New Artist'} />
       <Navigation />
       <main id='new_item'>
         <h1>{id ? 'Edit ' : 'New '} Artist</h1>
-
+        <div className='rainbow-line'></div>
         <Formik initialValues={initialValues} validationSchema={AddNewSchema} onSubmit={handleSubmit} enableReinitialize>
           <Form>
             {formNames.map((formItem) => {

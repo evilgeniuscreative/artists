@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation, useParams } from 'react-router-dom';
+import { useNavigate, useLocation, useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { Navigation } from '../Navigation';
 import './artistDetail.css';
+import { PageTitle } from '../PageTitle';
 
 type Album = {
   artistId: string;
@@ -24,9 +25,6 @@ type Artist = {
 };
 
 const ArtistDetail = () => {
-  // const queryParameters = new URLSearchParams(window.location.search);
-  // const artistId = queryParameters.get('id');
-  // console.log('artistId: ', artistId);
   const { id } = useParams();
 
   const [data, setData] = useState<any[]>([]);
@@ -57,15 +55,15 @@ const ArtistDetail = () => {
     fetchData();
   }, []);
 
-  const modifiedData = artistData.map((d) => ({ id: d.id, artistId: d.id, name: d.name, description: d.description, image: d.image, url: d.url, albums: d.albums }));
+  const modifiedData = artistData.map((d) => ({ id: d.id, name: d.name, description: d.description, image: d.image, url: d.url, albums: d.albums }));
 
   return (
     <div>
+      <PageTitle title='Artist Details' />;
       <Navigation />
-
       <main>
         <h1>Artist Detail</h1>
-
+        <div className='rainbow-line'></div>
         {modifiedData.map((details) => {
           console.log('modifiedData: ', modifiedData);
           return (
@@ -88,7 +86,6 @@ const ArtistDetail = () => {
                         </p>
 
                         {details.albums.map((album: Album) => {
-                          console.log('album: ', album);
                           return (
                             <div key={album.id}>
                               <div className='album-thumbnail'>
@@ -127,9 +124,9 @@ const ArtistDetail = () => {
                 </div>
               </article>
               <footer className='rightNote'>
-                <button className='edit' onClick={() => navigate('/form', { state: { editData: modifiedData[0] } })}>
+                <Link className='button' to={`/form/${id}`}>
                   Edit
-                </button>
+                </Link>
               </footer>
             </section>
           );
