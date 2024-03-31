@@ -14,11 +14,20 @@ main {
   padding-top: 25px;
 }
 
+main {
+  padding-bottom: 25px;
+}
+
+table {
+  width: 90%;
+}
+
 a,
 button {
   cursor: pointer;
 }
 
+.button,
 button {
   background-color: #8c2c79;
   border-radius: 5px;
@@ -27,11 +36,20 @@ button {
   padding: 10px 20px;
   transition: all 0.3s;
 }
+
+.button:hover,
 button:hover {
   background-color: #bc3ea3;
 }
+
+.button:hover,
 button:hover {
   transition: all 0.3s;
+}
+
+.button:visited,
+button:visited {
+  color: white;
 }
 
 form {
@@ -74,6 +92,7 @@ textarea {
 .form-item {
   position: relative;
 }
+
 .form-item .errorMsg {
   border-radius: 5px;
   color: red;
@@ -88,29 +107,29 @@ a {
   color: #356dc7;
   text-decoration: none;
 }
+
 a:hover {
   color: #3671cf;
 }
+
 a:visited {
   color: #356dc7;
 }
+
 a:active {
   color: #356dc7;
 }
 
-button {
-  margin-top: 10px;
-}
-
 .button {
   border-radius: 5px;
-  background-color: #356dc7;
+  background-color: #8c2c79;
   color: white;
   font-size: 80%;
   padding: 5px 10px;
   text-decoration: none;
   transition: all 0.3s;
 }
+
 .button:hover {
   background-color: #3671cf;
   transition: all 0.3s;
@@ -145,4 +164,4 @@ button {
   display: block;
   height: 50px;
   width: 50px;
-}/*# sourceMappingURL=App.css.map */
+}

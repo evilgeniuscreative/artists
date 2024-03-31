@@ -15,11 +15,20 @@ main {
   padding-top: 25px;
 }
 
+main {
+  padding-bottom: 25px;
+}
+
+table {
+  width: 90%;
+}
+
 a,
 button {
   cursor: pointer;
 }
 
+.button,
 button {
   background-color: $button-bg;
   &:hover {
@@ -32,6 +41,9 @@ button {
   transition: all $ttime;
   &:hover {
     transition: all $ttime;
+  }
+  &:visited {
+    color: white;
   }
 }
 
@@ -99,13 +111,9 @@ a {
   }
 }
 
-button {
-  margin-top: 10px;
-}
-
 .button {
   @include bradius;
-  background-color: $link-color;
+  background-color: $button-bg;
   color: white;
   font-size: 80%;
   padding: 5px 10px;

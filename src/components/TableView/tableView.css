@@ -1,8 +1,7 @@
 table {
-  margin: auto;
+  margin: 0 auto 50px;
   border-spacing: 0;
   border-radius: 5px;
-  width: 100%;
 }
 
 th,
@@ -11,6 +10,7 @@ td {
   border-bottom: 1px solid white;
   vertical-align: middle;
 }
+
 th button,
 td button {
   margin-top: 0;
@@ -21,13 +21,13 @@ td a {
 }
 
 th {
-  background: #3b7eea;
+  background: #f79146;
   color: white;
   padding: 15px 20px;
 }
 
 tr:nth-child(even) {
-  background: #e4eefe;
+  background-color: #f5e1d2;
 }
 
 tr {
@@ -35,7 +35,7 @@ tr {
 }
 
 tr:hover {
-  background: #e4eefe;
+  background: #f3c09b;
   transition: all 0.3s;
 }
 
@@ -60,4 +60,4 @@ thead tr th:first-child {
 
 thead tr th:last-child {
   border-top-right-radius: 5px;
-}/*# sourceMappingURL=tableView.css.map */
+}

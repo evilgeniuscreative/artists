@@ -1,9 +1,8 @@
 @import '../../vars.scss';
 table {
-  margin: auto;
+  margin: 0 auto 50px;
   border-spacing: 0;
   @include bradius;
-  width: 100%;
 }
 
 th,
@@ -26,13 +25,15 @@ th {
 }
 
 tr:nth-child(even) {
-  background: $link-hover;
+  background-color: $table-row;
 }
+
 tr {
   transition: all $ttime;
 }
+
 tr:hover {
-  background: $link-hover;
+  background: $table-row-hover;
   transition: all $ttime;
 }
 
@@ -40,6 +41,7 @@ tr:hover {
   font-size: 80%;
   padding: 5px 10px;
 }
+
 .delete {
   font-size: 80%;
   line-height: 1;
@@ -52,6 +54,7 @@ tr:hover {
 thead tr th:first-child {
   border-top-left-radius: 5px;
 }
+
 thead tr th:last-child {
   border-top-right-radius: 5px;
 }

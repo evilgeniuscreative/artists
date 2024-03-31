@@ -36,5 +36,6 @@ nav#nav span.nav-item {
   margin-top: 100px;
   padding-bottom: 50px;
   text-align: center;
+  transition: all 0.3s;
   width: 100%;
 }/*# sourceMappingURL=navigation.css.map */
