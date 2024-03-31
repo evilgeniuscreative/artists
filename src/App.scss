@@ -2,7 +2,7 @@
 body {
   background: url('/public/rainbow_bg.webp') no-repeat center center;
   background-size: cover;
-  margin: 50px auto;
+  margin: 0 auto;
   max-width: 1024px;
   width: 70%;
 }
@@ -11,7 +11,8 @@ table,
 form,
 main {
   background: white;
-  border-radius: 5px;
+  border-radius: 140px;
+  padding-top: 25px;
 }
 
 a,
@@ -34,10 +35,9 @@ button {
   }
 }
 
-form,
-main {
-  padding: 20px;
-  margin-top: 20px;
+form {
+  margin: 0 auto;
+  width: 50%;
 }
 
 h1 {
@@ -62,14 +62,27 @@ textarea {
   border-radius: 5px;
   border-width: 1px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  padding: 5px 10px !important;
+  font-size: 24px;
   margin-bottom: 25px;
+  padding: 10px 20px !important;
+  width: 100%;
 }
 
 textarea {
-  width: 300px;
   height: 100px;
+}
+
+.form-item {
+  position: relative;
+  .errorMsg {
+    @include bradius;
+    color: red;
+    display: block;
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    top: 40px;
+  }
 }
 
 a {
@@ -111,10 +124,10 @@ button {
 }
 
 .rainbow-line {
-  width: 100%;
-  height: 2px;
   background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-  margin-bottom: 15px;
+  height: 2px;
+  margin: 0 auto 15px;
+  width: 90%;
 }
 .rightNote {
   display: block;
@@ -127,9 +140,9 @@ button {
 }
 .thumbnail-image {
   @include bradius;
-  display: block;
-  width: 50px;
-  height: 50px;
-  background-size: cover;
   background-position: center center;
+  background-size: cover;
+  display: block;
+  height: 50px;
+  width: 50px;
 }

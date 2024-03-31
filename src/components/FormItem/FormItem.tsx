@@ -9,7 +9,7 @@ interface FormStructure {
 
 const FormItem = ({ name, as = undefined, placeholder, type = 'text' }: FormStructure) => {
   return (
-    <div>
+    <div className='form-item'>
       <label htmlFor={name}>{placeholder}</label>
       <Field as={as} id={name} name={name} placeholder={placeholder} type={type} />
       <span className='errorMsg'>
