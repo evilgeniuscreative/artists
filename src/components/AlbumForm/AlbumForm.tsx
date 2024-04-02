@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { FormItem } from '..';
 import axios, { AxiosResponse } from 'axios';
 import GenerateRandomId from '../../Utils/GenerateRandomId';
@@ -10,7 +10,7 @@ import { PageTitle } from '../PageTitle';
 
 type Album = {
   toEdit: boolean;
-  artistId: string;
+  artistId: string | null;
   id: string;
   name: string;
   description: string;
@@ -18,18 +18,6 @@ type Album = {
   coverImg: string;
   tracks: string;
 };
-
-type artist_id = string;
-
-interface MyFormValues {
-  id: string;
-  albums: Album;
-}
-
-interface PageTitle {
-  pageTitle: string;
-}
-const pageTitle = 'Album Details';
 
 const AddNewSchema = object().shape({
   artistId: string(),
@@ -44,85 +32,72 @@ const AddNewSchema = object().shape({
 
 const AlbumForm: React.FC<{}> = () => {
   const navigate = useNavigate();
-  console.log('useLocation: ', useLocation());
-
-  const queryParameters = new URLSearchParams(window.location.search);
-  const isNew = queryParameters.get('new');
-  const toEdit = Boolean(queryParameters.get('edit'));
-  const id = queryParameters.get('id');
-  const artist_id = queryParameters.get('artistId');
-
-  console.log('artist_id: ', artist_id, typeof artist_id);
-  const [albumData, setAlbumData] = useState<Album[]>([]);
-
-  const [artistId, setArtistId] = useState<string>(artist_id || '');
-
-  setArtistId(artist_id);
-
-  const [editData, setEditData] = useState({
-    toEdit: toEdit,
-    artistId: artistId,
-    id: id,
-    name: '',
-    description: '',
-    len: 0,
-    coverImg: '',
-    tracks: '',
-  });
-
-  const handleSubmit = async (values: MyFormValues) => {
-    let response: AxiosResponse<any, any>;
-    if (id) {
-      response = await axios.patch(`http://localhost:5000/artists/${id}`, values);
-    } else {
-      response = await axios.post('http://localhost:5000/artists', values);
-    }
-    if (response.data) {
-      navigate('/table', { state: { src: 'http://localhost:5000/artists' } });
-    }
-  };
+  const [editData, setEditData] = useState<Album>({} as Album); // Initialize as empty object
 
   useEffect(() => {
-    console.log('useEffect, toEdit: ', toEdit);
+    const queryParameters = new URLSearchParams(window.location.search);
+    const toEdit = queryParameters.get('edit') === 'true';
+    const artistId = queryParameters.get('artistId');
+
     if (toEdit) {
-      let response: AxiosResponse<any, any>;
-      const fetchData = async () => {
-        try {
-          response = await axios.get(`http://localhost:5000/artists/${artistId}`);
-          const albums = Object.values(response.data.albums);
-          const album = albums.find((album: any) => album.id === id);
-
-          console.log('album: ', album);
-          // setEditData(album);
-        } catch (error) {
-          console.log('Error fetch data in AlbumForm');
-        }
-      };
-
-      fetchData();
+      const id = queryParameters.get('id');
+      fetchData(id, artistId);
+    } else {
+      const newArtistId = GenerateRandomId(); // Generate new artistId
+      setEditData({
+        toEdit: false,
+        artistId: newArtistId, // Assign the generated artistId
+        id: GenerateRandomId(),
+        name: '',
+        description: '',
+        len: 0,
+        coverImg: '',
+        tracks: '',
+      });
     }
-  }, [toEdit]);
+  }, []);
 
-  const initialValues: MyFormValues = {
-    id: id || '',
-    albums: {
-      toEdit: toEdit || false,
-      artistId: artistId || '',
-      id: id || GenerateRandomId(),
-      name: '',
-      description: '',
-      len: 0,
-      coverImg: '',
-      tracks: '',
-    },
+  const fetchData = async (id: string | null, artistId: string | null) => {
+    if (!id || !artistId) return;
+
+    try {
+      const response: AxiosResponse<any, any> = await axios.get(`http://localhost:5000/artists/${artistId}`);
+      const albums: Album[] = Object.values(response.data.albums);
+      const album: Album | undefined = albums.find((album: any) => album.id === id);
+
+      if (album) {
+        setEditData({
+          ...album,
+          toEdit: true,
+          artistId: artistId, // Ensure artistId is assigned from URL parameter
+        });
+      }
+    } catch (error) {
+      console.log('Error fetching data in AlbumForm:', error);
+    }
   };
 
-  console.log('initialValues: ', initialValues);
-  console.log('stuff', artistId, id, toEdit);
+  const handleSubmit = async (values: Album) => {
+    try {
+      let response: AxiosResponse<any, any>;
+
+      if (values.toEdit) {
+        response = await axios.patch(`http://localhost:5000/artists/${values.id}`, values);
+      } else {
+        response = await axios.post('http://localhost:5000/artists', values);
+      }
+
+      if (response.data) {
+        navigate('/table', { state: { src: 'http://localhost:5000/artists' } });
+      }
+    } catch (error) {
+      console.log('Error while submitting form:', error);
+    }
+  };
 
   const formNames = [
-    { name: 'artistId', artistId: '', placeholder: 'artistId' },
-    { name: 'id', id: '', placeholder: 'albumId' },
+    { name: 'artistId', placeholder: 'Artist ID' },
+    { name: 'id', placeholder: 'Album ID' },
     { name: 'name', placeholder: 'Album Name' },
     { name: 'len', placeholder: 'Album Length' },
     { name: 'tracks', placeholder: 'Tracks (comma-separated)' },
@@ -132,19 +107,15 @@ const AlbumForm: React.FC<{}> = () => {
 
   return (
     <main id='new_item'>
-      <h1>
-        {editData?.toEdit ? 'Edit ' : 'New '} {pageTitle}
-      </h1>
+      <h1>{editData?.toEdit ? 'Edit' : 'New'} Album</h1>
       <PageTitle title='Album Details' />
-      <Formik initialValues={initialValues} validationSchema={AddNewSchema} onSubmit={handleSubmit} enableReinitialize>
+      <Formik initialValues={editData} validationSchema={AddNewSchema} onSubmit={handleSubmit} enableReinitialize>
         <Form>
-          {formNames.map((formItem) => {
-            return (
-              <Fragment key={formItem.id}>
-                <FormItem name={formItem.name} as={formItem.as} placeholder={formItem.placeholder} type='text' />
-              </Fragment>
-            );
-          })}
+          {formNames.map((formItem, index) => (
+            <Fragment key={index}>
+              <FormItem name={formItem.name} as={formItem.as} placeholder={formItem.placeholder} type='text' />
+            </Fragment>
+          ))}
           <button type='submit'>{editData?.toEdit ? 'Update' : 'Submit'}</button>
         </Form>
       </Formik>
