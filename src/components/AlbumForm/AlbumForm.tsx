@@ -82,7 +82,7 @@ const AlbumForm: React.FC<{}> = () => {
       let response: AxiosResponse<any, any>;
 
       if (values.toEdit) {
-        response = await axios.patch(`http://localhost:5000/artists/${values.id}`, values);
+        response = await axios.patch(`http://localhost:5000/artists/${values.artistId}`, values);
       } else {
         response = await axios.post('http://localhost:5000/artists', values);
       }

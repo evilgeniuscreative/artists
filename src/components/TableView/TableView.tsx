@@ -11,6 +11,7 @@ const TableView = () => {
   const [currentSource, setCurrentSource] = useState('http://localhost:5000/artists');
 
   const { state } = useLocation();
+  console.log('location state: ', useLocation());
 
   useEffect(() => {
     const fetchData = async () => {
@@ -70,10 +71,6 @@ const TableView = () => {
                     <Link className='button' to={`/form/${item.artistId}`}>
                       Edit
                     </Link>
-
-                    {/* <button className='edit' onClick={() => navigate(`/form/${item.artistId}`, { state: { editData: data[index] } })}>
-                    // Edit //{' '}
-                  </button> */}
                   </td>
                   <td>
                     <a

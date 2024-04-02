@@ -20,7 +20,7 @@ interface MyFormValues {
 const AddNewSchema = object().shape({
   id: string(),
   name: string().min(3, 'Must be at least 3 characters').max(70, 'Must be less than 70 characters').required('Required'),
-  description: string().min(3, 'Must be at least 3 characters').max(300, 'Must be less than 300 characters').required('Required'),
+  description: string().min(3, 'Must be at least 3 characters').max(1000, 'Must be less than 1000 characters').required('Required'),
   city: string(),
   url: string(),
   image: string(),
@@ -61,7 +61,7 @@ const InputForm: React.FC<{}> = () => {
     } else {
       response = await axios.post('http://localhost:5000/artists', values);
     }
-    if (response.data) navigate(`/artist-detail/?id=${id}`, { state: { src: 'http://localhost:5000/artists' } });
+    if (response.data) navigate(`/artist-detail/${id}`, { state: { src: 'http://localhost:5000/artists' } });
   };
 
   const initialValues: MyFormValues = {

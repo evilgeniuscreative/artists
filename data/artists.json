@@ -8,12 +8,16 @@
       "description": "This is Sapphira Vee",
       "albums": [],
       "image": "https://f4.bcbits.com/img/a3016735344_10.jpg",
-      "audio": ["mp31.mp3", "mp32.mp3", "mp33.mp3"]
+      "audio": [
+        "mp31.mp3",
+        "mp32.mp3",
+        "mp33.mp3"
+      ]
     },
     {
       "id": "a957",
-      "name": "Prince",
-      "description": "Prince Rogers Nelson (June 7, 1958 – April 21, 2016) was an American singer, multi-instrumentalist, songwriter, record producer, and actor. ",
+      "name": "Purple Rain",
+      "description": "Purple Rain is the sixth studio album by the American singer, songwriter, producer, and multi-instrumentalist Prince. It was released on June 25, 1984, by Warner Bros. Records as the soundtrack album to the 1984 film of the same name. Purple Rain was musically denser than Prince's previous albums, emphasizing full band performances, and multiple layers of guitars, keyboards, electronic synthesizer effects, drum machines, and other instruments.",
       "url": "http://www.prince.com",
       "city": "Minneapolis",
       "image": "https://www.rollingstone.com/wp-content/uploads/2019/11/prince-1999-feature.jpg",
@@ -26,7 +30,12 @@
           "len": 9,
           "tracks": "Let's Go Crazy, The Beautiful Ones, Computer Blue, Darling Nikki, Wednesday, Purple Rain, I Would Die 4 U, Baby I'm a Star, Father's Song"
         }
-      ]
+      ],
+      "coverImg": "https://upload.wikimedia.org/wikipedia/en/9/9c/Princepurplerain.jpg",
+      "len": 9,
+      "tracks": "Let's Go Crazy, The Beautiful Ones, Computer Blue, Darling Nikki, Wednesday, Purple Rain, I Would Die 4 U, Baby I'm a Star, Father's Song",
+      "toEdit": true,
+      "artistId": "a957"
     },
     {
       "id": "8246",
