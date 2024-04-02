@@ -104,20 +104,20 @@ textarea {
 }
 
 a {
-  color: #356dc7;
+  color: #8c2c79;
   text-decoration: none;
 }
 
 a:hover {
-  color: #3671cf;
+  color: #bc3ea3;
 }
 
 a:visited {
-  color: #356dc7;
+  color: #8c2c79;
 }
 
 a:active {
-  color: #356dc7;
+  color: #8c2c79;
 }
 
 .button {
@@ -131,8 +131,12 @@ a:active {
 }
 
 .button:hover {
-  background-color: #3671cf;
+  background-color: #bc3ea3;
   transition: all 0.3s;
+}
+
+.button.edit {
+  font-size: 60%;
 }
 
 .formItem .errorMsg {
@@ -149,8 +153,13 @@ a:active {
 
 .rightNote {
   display: block;
+  margin-right: 50px;
   font-size: 90%;
   text-align: right;
+}
+
+.rightButton {
+  float: right;
 }
 
 .no-decoration {

@@ -6,7 +6,7 @@ import './artistDetail.css';
 import { PageTitle } from '../PageTitle';
 
 type Album = {
-  artistId: string;
+  toEdit: boolean;
   id: string;
   name: string;
   description: string;
@@ -94,12 +94,13 @@ const ArtistDetail = () => {
                                   <img src={album.coverImg} alt={album.name} />
                                 </div>
                               </div>
+                              <h3>
+                                {album.name}
+                                <Link to={`/album?edit=true&id=${album.id}&artistId=${details.id}`} className='button edit rightButton'>
+                                  Edit Album
+                                </Link>
+                              </h3>
                               <ul>
-                                {/* <li key={album.albumId}> */}
-                                {/* <a className='edit' onClick={() => navigate('/album', { state: { editData: album } })}>
-                                    [ Edit ]
-                                  </a> */}
-                                {/* </li> */}
                                 <li>{album.description}</li>
                                 <li>
                                   {album.len}

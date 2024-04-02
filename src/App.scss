@@ -123,6 +123,9 @@ a {
     background-color: $link-hover;
     transition: all $ttime;
   }
+  &.edit {
+    font-size: 60%;
+  }
 }
 .formItem {
   .errorMsg {
@@ -139,8 +142,13 @@ a {
 }
 .rightNote {
   display: block;
+  margin-right: 50px;
   font-size: 90%;
   text-align: right;
+}
+
+.rightButton {
+  float: right;
 }
 
 .no-decoration {

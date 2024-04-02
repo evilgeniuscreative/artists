@@ -1,3 +1,8 @@
+.artist-detail {
+  margin: 0 auto;
+  width: 90%;
+}
+
 .artist-detail .detail .artist-image {
   border-radius: 5px;
   display: inline-block;
@@ -5,10 +10,12 @@
   overflow: hidden;
   width: 30%;
 }
+
 .artist-detail .detail .artist-image img {
   border-radius: 5px;
   max-width: 100%;
 }
+
 .artist-detail .detail .artist-info {
   display: inline-block;
   width: 60%;
@@ -29,6 +36,7 @@
   top: 0;
   transition: all 1s;
 }
+
 .album-full img {
   transition: all 1s;
   width: 400px;
@@ -41,6 +49,7 @@
   position: relative;
   width: 100px;
 }
+
 .album-thumbnail img {
   border-radius: 5px;
   max-width: 100%;
@@ -53,7 +62,8 @@
   height: auto;
   top: -200px;
 }
+
 .album-thumbnail:hover .album-full img {
   width: 400px;
   transition: all 0.5s;
-}/*# sourceMappingURL=artistDetail.css.map */
+}
