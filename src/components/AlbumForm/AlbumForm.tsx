@@ -19,6 +19,8 @@ type Album = {
   tracks: string;
 };
 
+type artist_id = string;
+
 interface MyFormValues {
   id: string;
   albums: Album;
@@ -49,13 +51,13 @@ const AlbumForm: React.FC<{}> = () => {
   const toEdit = Boolean(queryParameters.get('edit'));
   const id = queryParameters.get('id');
   const artist_id = queryParameters.get('artistId');
-  
+
   console.log('artist_id: ', artist_id, typeof artist_id);
   const [albumData, setAlbumData] = useState<Album[]>([]);
 
-  const [artistId, setArtistId] = useState<string>;
+  const [artistId, setArtistId] = useState<string>(artist_id || '');
 
-  setArtistId([artist_id]);
+  setArtistId(artist_id);
 
   const [editData, setEditData] = useState({
     toEdit: toEdit,
