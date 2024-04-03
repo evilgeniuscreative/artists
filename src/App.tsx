@@ -19,7 +19,7 @@ function App() {
         <Route path='/table' element={<TableView />}></Route>
         <Route path='/form/:id?' element={<InputForm />}></Route>
         <Route path='/album' element={<AlbumForm />}></Route>
-        <Route path='/albums' element={<TableView />}></Route>
+        <Route path='/albums/:id' element={<TableView />}></Route>
         <Route path='/artist-detail/:id' element={<ArtistDetail />}></Route>
         <Route path='*' element={<FOF />} />
       </Routes>

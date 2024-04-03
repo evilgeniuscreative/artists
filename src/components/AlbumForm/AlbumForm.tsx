@@ -32,7 +32,7 @@ const AddNewSchema = object().shape({
 
 const AlbumForm: React.FC<{}> = () => {
   const navigate = useNavigate();
-  const [editData, setEditData] = useState<Album>({} as Album); // Initialize as empty object
+  const [editData, setEditData] = useState<Album | null>(null); // Initialize as empty object
 
   useEffect(() => {
     const queryParameters = new URLSearchParams(window.location.search);
@@ -106,20 +106,26 @@ const AlbumForm: React.FC<{}> = () => {
   ];
 
   return (
-    <main id='new_item'>
-      <h1>{editData?.toEdit ? 'Edit' : 'New'} Album</h1>
-      <PageTitle title='Album Details' />
-      <Formik initialValues={editData} validationSchema={AddNewSchema} onSubmit={handleSubmit} enableReinitialize>
-        <Form>
-          {formNames.map((formItem, index) => (
-            <Fragment key={index}>
-              <FormItem name={formItem.name} as={formItem.as} placeholder={formItem.placeholder} type='text' />
-            </Fragment>
-          ))}
-          <button type='submit'>{editData?.toEdit ? 'Update' : 'Submit'}</button>
-        </Form>
-      </Formik>
-    </main>
+    <>
+      <main id='new_item'>
+        {editData !== null && (
+          <>
+            <h1>{editData.toEdit ? 'Edit' : 'New'} Album</h1>
+            <PageTitle title='Album Details' />
+            <Formik initialValues={editData} validationSchema={AddNewSchema} onSubmit={handleSubmit} enableReinitialize>
+              <Form>
+                {formNames.map((formItem, index) => (
+                  <Fragment key={index}>
+                    <FormItem name={formItem.name} as={formItem.as} placeholder={formItem.placeholder} type='text' />
+                  </Fragment>
+                ))}
+                <button type='submit'>{editData.toEdit ? 'Update' : 'Submit'}</button>
+              </Form>
+            </Formik>
+          </>
+        )}
+      </main>
+    </>
   );
 };
 

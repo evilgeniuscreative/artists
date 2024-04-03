@@ -102,7 +102,7 @@ const InputForm: React.FC<{}> = () => {
             <button type='submit'>{userData?.id ? 'Update' : 'Submit'}</button>
             {userData?.id ? (
               <p className='rightNote'>
-                <a href={`/album/?new=true&id=${userData.id}`}>Add artist albums</a>
+                <a href={`/albums/{userData.id}`}>Artist albums</a>
               </p>
             ) : null}
           </Form>
