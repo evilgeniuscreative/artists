@@ -68,26 +68,21 @@ const ArtistDetail = () => {
           console.log('modifiedData: ', modifiedData);
           return (
             <section className='artist-detail' key={id}>
-              <header>
-                <h2>{details.name}</h2>
-              </header>
               <article>
                 <div className='detail'>
                   <a className='artist-image' href={details.url} title={details.url} target='_blank' rel='noreferrer'>
                     <img src={details.image} alt={details.name} />
                   </a>
                   <section className='artist-info'>
+                    <h1 className='artist-title'>{details.name}</h1>
                     <p>{details.description}</p>
                     {details.albums.length > 0 ? (
                       <div>
-                        <p>
-                          <strong>Albums</strong>
-                          <br />
-                        </p>
+                        <h2 className='albums-section'>Albums</h2>
 
                         {details.albums.map((album: Album) => {
                           return (
-                            <div key={album.id}>
+                            <div className='album-detail' key={album.id}>
                               <div className='album-thumbnail'>
                                 <img src={album.coverImg} alt={album.name} />
                                 <div className='album-full'>
@@ -125,7 +120,7 @@ const ArtistDetail = () => {
                 </div>
               </article>
               <footer className='rightNote'>
-                <Link className='button' to='/album'>
+                <Link className='button' to={`/album/?artistId=${id}`}>
                   Add Album
                 </Link>
                 <Link className='button' to={`/form/${id}`}>

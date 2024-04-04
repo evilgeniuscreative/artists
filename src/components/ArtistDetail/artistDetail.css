@@ -3,10 +3,23 @@
   width: 90%;
 }
 
+.artist-detail .album-detail + .album-detail {
+  margin-top: 50px;
+  border-top: 1px dashed black;
+  padding-top: 50px;
+}
+
+.artist-detail .detail h1.artist-title {
+  font-size: 30px;
+  text-align: left;
+  margin: 0 0 0 0;
+  padding: 20px 0 0 0;
+}
+
 .artist-detail .detail .artist-image {
   border-radius: 5px;
   display: inline-block;
-  margin-right: 20px;
+  margin: 25px 20px 0 0;
   overflow: hidden;
   width: 30%;
 }
@@ -20,6 +33,10 @@
   display: inline-block;
   width: 60%;
   vertical-align: top;
+}
+
+.albums-section {
+  border-bottom: 1px solid black;
 }
 
 .album-full {

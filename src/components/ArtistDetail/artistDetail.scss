@@ -3,11 +3,25 @@
   margin: 0 auto;
   width: 90%;
 
+  .album-detail {
+    & + .album-detail {
+      margin-top: 50px;
+      border-top: 1px dashed black;
+      padding-top: 50px;
+    }
+  }
+
   .detail {
+    h1.artist-title {
+      font-size: 30px;
+      text-align: left;
+      margin: 0 0 0 0;
+      padding: 20px 0 0 0;
+    }
     .artist-image {
       @include bradius;
       display: inline-block;
-      margin-right: 20px;
+      margin: 25px 20px 0 0;
       overflow: hidden;
       width: 30%;
       img {
@@ -21,6 +35,10 @@
       vertical-align: top;
     }
   }
+}
+
+.albums-section {
+  border-bottom: 1px solid black;
 }
 
 .album-full {

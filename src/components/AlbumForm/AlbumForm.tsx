@@ -32,21 +32,22 @@ const AddNewSchema = object().shape({
 
 const AlbumForm: React.FC<{}> = () => {
   const navigate = useNavigate();
-  const [editData, setEditData] = useState<Album | null>(null); // Initialize as empty object
-  const [whichAlbum, setWhichAlbum] = useState<number>(0); // Initialize as empty object
-  useEffect(() => {
-    const queryParameters = new URLSearchParams(window.location.search);
-    const toEdit = queryParameters.get('edit') === 'true';
-    const artistId = queryParameters.get('artistId');
+  const [editData, setEditData] = useState<Album | null>(null);
+  const [whichAlbum, setWhichAlbum] = useState<number>(0);
 
+  const queryParameters = new URLSearchParams(window.location.search);
+  const toEdit = queryParameters.get('edit') === 'true';
+  const artistId = queryParameters.get('artistId');
+  const id = queryParameters.get('id');
+
+  useEffect(() => {
     if (toEdit) {
-      const id = queryParameters.get('id');
       fetchData(id, artistId);
     } else {
-      const newArtistId = GenerateRandomId(); // Generate new artistId
+      console.log('new album');
       setEditData({
         toEdit: false,
-        artistId: newArtistId, // Assign the generated artistId
+        artistId: artistId,
         id: GenerateRandomId(),
         name: '',
         description: '',
@@ -77,6 +78,17 @@ const AlbumForm: React.FC<{}> = () => {
           ...album,
           toEdit: true,
           artistId: artistId, // Ensure artistId is assigned from URL parameter
+        });
+      } else {
+        setEditData({
+          artistId: artistId,
+          toEdit: false,
+          id: GenerateRandomId(),
+          name: '',
+          description: '',
+          len: 0,
+          coverImg: '',
+          tracks: '',
         });
       }
     } catch (error) {
@@ -117,7 +129,7 @@ const AlbumForm: React.FC<{}> = () => {
 
   return (
     <>
-      <main id='new_item'>
+      <main>
         {editData !== null && (
           <>
             <h1>{editData.toEdit ? 'Edit' : 'New'} Album</h1>
