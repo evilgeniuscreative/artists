@@ -33,7 +33,7 @@ const AddNewSchema = object().shape({
 const AlbumForm: React.FC<{}> = () => {
   const navigate = useNavigate();
   const [editData, setEditData] = useState<Album | null>(null); // Initialize as empty object
-
+  const [whichAlbum, setWhichAlbum] = useState<number>(0); // Initialize as empty object
   useEffect(() => {
     const queryParameters = new URLSearchParams(window.location.search);
     const toEdit = queryParameters.get('edit') === 'true';
@@ -63,7 +63,14 @@ const AlbumForm: React.FC<{}> = () => {
     try {
       const response: AxiosResponse<any, any> = await axios.get(`http://localhost:5000/artists/${artistId}`);
       const albums: Album[] = Object.values(response.data.albums);
+
       const album: Album | undefined = albums.find((album: any) => album.id === id);
+
+      for (const el of albums) {
+        if (el.id === id) {
+          setWhichAlbum(albums.indexOf(el));
+        }
+      }
 
       if (album) {
         setEditData({
@@ -82,13 +89,14 @@ const AlbumForm: React.FC<{}> = () => {
       let response: AxiosResponse<any, any>;
 
       if (values.toEdit) {
+        console.log('patched', `http://localhost:5000/artists/${values.artistId}`, values);
         response = await axios.patch(`http://localhost:5000/artists/${values.artistId}`, values);
       } else {
         response = await axios.post('http://localhost:5000/artists', values);
       }
 
       if (response.data) {
-        navigate('/table', { state: { src: 'http://localhost:5000/artists' } });
+        //  navigate('/table', { state: { src: 'http://localhost:5000/artists' } });
       }
     } catch (error) {
       console.log('Error while submitting form:', error);

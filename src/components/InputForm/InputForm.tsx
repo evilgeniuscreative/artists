@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import { FormItem } from '..';
 import axios, { AxiosResponse } from 'axios';
 import './inputForm.css';
@@ -100,13 +100,15 @@ const InputForm: React.FC<{}> = () => {
               );
             })}
             <button type='submit'>{userData?.id ? 'Update' : 'Submit'}</button>
-            {userData?.id ? (
-              <p className='rightNote'>
-                <a href={`/albums/{userData.id}`}>Artist albums</a>
-              </p>
-            ) : null}
           </Form>
         </Formik>
+        {userData?.id ? (
+          <p className='rightNote'>
+            <Link className='button' to={`/albums/${userData.id}`}>
+              Artist albums
+            </Link>
+          </p>
+        ) : null}
       </main>
     </>
   );

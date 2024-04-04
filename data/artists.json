@@ -17,7 +17,7 @@
     {
       "id": "a957",
       "name": "Purple Rain",
-      "description": "Purple Rain is the sixth studio album by the American singer, songwriter, producer, and multi-instrumentalist Prince. It was released on June 25, 1984, by Warner Bros. Records as the soundtrack album to the 1984 film of the same name. Purple Rain was musically denser than Prince's previous albums, emphasizing full band performances, and multiple layers of guitars, keyboards, electronic synthesizer effects, drum machines, and other instruments.",
+      "description": "Purple Rain, Purple Rain! is the sixth studio album by the American singer, songwriter, producer, and multi-instrumentalist Prince. It was released on June 25, 1984, by Warner Bros. Records as the soundtrack album to the 1984 film of the same name. Purple Rain was musically denser than Prince's previous albums, emphasizing full band performances, and multiple layers of guitars, keyboards, electronic synthesizer effects, drum machines, and other instruments.",
       "url": "http://www.prince.com",
       "city": "Minneapolis",
       "image": "https://www.rollingstone.com/wp-content/uploads/2019/11/prince-1999-feature.jpg",
@@ -39,8 +39,8 @@
     },
     {
       "id": "8246",
-      "name": "Max Rocket",
-      "description": "My alter ego",
+      "name": "Soulmate of the Month Club",
+      "description": "Quirky love songs, political screeds, and humor",
       "url": "http://maxrocketmusic.com",
       "city": "Durham NC",
       "image": "https://maxrocketmusic.com/wp-content/uploads/2024/03/max-rocket-logo.jpg",
@@ -54,7 +54,13 @@
           "tracks": "Soulmate of the Month Club, 1959, Pitstache, Hand Me Down Love, Everyday Love Song, Love is a Drug",
           "type": "text"
         }
-      ]
+      ],
+      "len": 8,
+      "coverImg": "https://maxrocketmusic.com/wp-content/uploads/2024/04/soulmate.jp_.jpg",
+      "tracks": "Soulmate of the Month Club, 1959, Pitstache, Hand Me Down Love, Everyday Love Song, Love is a Drug",
+      "type": "text",
+      "toEdit": true,
+      "artistId": "8246"
     },
     {
       "id": "37ae",
