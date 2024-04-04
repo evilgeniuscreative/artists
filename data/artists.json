@@ -39,8 +39,8 @@
     },
     {
       "id": "8246",
-      "name": "Soulmate of the Month Club",
-      "description": "Quirky love songs, political screeds, and humor",
+      "name": "Max Rocket",
+      "description": "Max Rocket is my musical alter ego and stage name. ",
       "url": "http://maxrocketmusic.com",
       "city": "Durham NC",
       "image": "https://maxrocketmusic.com/wp-content/uploads/2024/03/max-rocket-logo.jpg",
@@ -48,19 +48,15 @@
         {
           "id": "GeGX2cfgnG",
           "name": "Soulmate of the Month Club",
-          "description": "Quirky love songs",
-          "len": 8,
-          "coverImg": "",
+          "description": "Quirky love songs, political screeds, and humorous sarcasm",
+          "len": 6,
+          "coverImg": "https://maxrocketmusic.com/wp-content/uploads/2024/04/soulmate.jp_.jpg",
           "tracks": "Soulmate of the Month Club, 1959, Pitstache, Hand Me Down Love, Everyday Love Song, Love is a Drug",
-          "type": "text"
+          "type": "text",
+          "toEdit": true,
+          "artistId": "8246"
         }
-      ],
-      "len": 8,
-      "coverImg": "https://maxrocketmusic.com/wp-content/uploads/2024/04/soulmate.jp_.jpg",
-      "tracks": "Soulmate of the Month Club, 1959, Pitstache, Hand Me Down Love, Everyday Love Song, Love is a Drug",
-      "type": "text",
-      "toEdit": true,
-      "artistId": "8246"
+      ]
     },
     {
       "id": "37ae",

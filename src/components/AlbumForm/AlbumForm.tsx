@@ -89,14 +89,16 @@ const AlbumForm: React.FC<{}> = () => {
       let response: AxiosResponse<any, any>;
 
       if (values.toEdit) {
-        console.log('patched', `http://localhost:5000/artists/${values.artistId}`, values);
-        response = await axios.patch(`http://localhost:5000/artists/${values.artistId}`, values);
+        const albumValues = { albums: values };
+
+        console.log('patched', `http://localhost:5000/artists/${values.artistId}`, albumValues);
+        response = await axios.patch(`http://localhost:5000/artists/${values.artistId}`, albumValues);
       } else {
         response = await axios.post('http://localhost:5000/artists', values);
       }
 
       if (response.data) {
-        navigate('/table', { state: { src: 'http://localhost:5000/artists' } });
+        //  navigate('/table', { state: { src: 'http://localhost:5000/artists' } });
       }
     } catch (error) {
       console.log('Error while submitting form:', error);
@@ -107,8 +109,8 @@ const AlbumForm: React.FC<{}> = () => {
     { name: 'artistId', placeholder: 'Artist ID' },
     { name: 'id', placeholder: 'Album ID' },
     { name: 'name', placeholder: 'Album Name' },
-    { name: 'len', placeholder: 'Album Length' },
-    { name: 'tracks', placeholder: 'Tracks (comma-separated)' },
+    { name: 'len', placeholder: 'Number of Tracks' },
+    { name: 'tracks', placeholder: 'Track names (comma-separated)' },
     { name: 'coverImg', placeholder: 'Cover Image' },
     { name: 'description', placeholder: 'Album Description', as: 'textarea' },
   ];

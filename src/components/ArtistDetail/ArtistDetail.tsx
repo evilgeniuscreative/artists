@@ -103,7 +103,7 @@ const ArtistDetail = () => {
                               <ul>
                                 <li>{album.description}</li>
                                 <li>
-                                  {album.len}
+                                  {album.len} tracks:
                                   <ul>
                                     {album.tracks.split(',').map((track) => {
                                       return <li key={track}>{track}</li>;
@@ -125,8 +125,11 @@ const ArtistDetail = () => {
                 </div>
               </article>
               <footer className='rightNote'>
+                <Link className='button' to='/album'>
+                  Add Album
+                </Link>
                 <Link className='button' to={`/form/${id}`}>
-                  Edit
+                  Edit Artist
                 </Link>
               </footer>
             </section>

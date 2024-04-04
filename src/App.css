@@ -139,6 +139,10 @@ a:active {
   font-size: 60%;
 }
 
+.button + .button {
+  margin-left: 10px;
+}
+
 .formItem .errorMsg {
   font-size: 11px;
   color: red;

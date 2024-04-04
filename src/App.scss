@@ -126,6 +126,10 @@ a {
   &.edit {
     font-size: 60%;
   }
+
+  & + .button {
+    margin-left: 10px;
+  }
 }
 .formItem {
   .errorMsg {
