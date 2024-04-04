@@ -96,7 +96,7 @@ const AlbumForm: React.FC<{}> = () => {
       }
 
       if (response.data) {
-        //  navigate('/table', { state: { src: 'http://localhost:5000/artists' } });
+        navigate('/table', { state: { src: 'http://localhost:5000/artists' } });
       }
     } catch (error) {
       console.log('Error while submitting form:', error);
