@@ -1,0 +1,9 @@
+.album-detail article {
+  display: flex;
+  padding: 0 50px;
+  gap: 25px;
+}
+
+.album-detail .album-image {
+  margin-top: 30px;
+}

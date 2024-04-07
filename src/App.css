@@ -10,7 +10,8 @@ table,
 form,
 main {
   background: white;
-  border-radius: 140px;
+  border-top-right-radius: 140px;
+  border-top-left-radius: 140px;
   padding-top: 25px;
 }
 

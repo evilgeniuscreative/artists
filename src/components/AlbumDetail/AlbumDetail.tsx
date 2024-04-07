@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Navigation, Header } from '..';
-import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import { useNavigate, useParams, useLocation, Link } from 'react-router-dom';
 import axios from 'axios';
 import './albumDetail.css';
 
@@ -55,20 +55,35 @@ const AlbumDetail = () => {
           {!albumData ? (
             <div>loading...</div>
           ) : (
-            <section className='artist-detail' key={id}>
+            <section className='album-detail' key={id}>
               <article>
+                <a className='album-image' href={albumData.url} title={albumData.url} target='_blank' rel='noreferrer'>
+                  <img src={albumData.coverImg} alt={albumData.name} />
+                </a>
                 <div className='detail'>
-                  <h1>{albumData.name}</h1>
-                  <a className='artist-image' href={albumData.url} title={albumData.url} target='_blank' rel='noreferrer'>
-                    <img src={albumData.coverImg} alt={albumData.name} />
-                  </a>
+                  <h2>{albumData.name}</h2>
+
                   {albumData.description}
+                  <h2>Tracks ({albumData.len}):</h2>
+                  <ul>
+                    {albumData.tracks.split(',').map((track: string) => {
+                      return <li key={track}>{track}</li>;
+                    })}
+                  </ul>
                 </div>
               </article>
             </section>
           )}
           ;
         </>
+        <footer className='rightNote'>
+          <Link className='button' to={`/artist-detail/${id}/albums/${albumId}/edit`}>
+            Edit Album
+          </Link>
+          <Link className='button ' to={`/artist-detail/${id}/albums`}>
+            Back
+          </Link>
+        </footer>
       </main>
     </div>
   );
