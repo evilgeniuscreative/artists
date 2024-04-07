@@ -30,7 +30,7 @@ Next time
 
 
 Tasks 
-1. Add query parameters to the album page
+1. Add query parameters to the album page --  typescript issues, can't fix
 2. in the artist page, when a user clicks on an album, navigate to it. (Look at question 1)
 3. EXTRA - Album page should list all the songs, onClick - link to YouTube. Look into react-music-player if deisred. 
 https://www.npmjs.com/package/react-h5-audio-player

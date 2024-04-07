@@ -1,12 +1,12 @@
 import { Fragment, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { FormItem } from '..';
 import axios, { AxiosResponse } from 'axios';
 import GenerateRandomId from '../../Utils/GenerateRandomId';
 import './albumForm.css';
 import { Formik, Form } from 'formik';
 import { string, object } from 'yup';
-import { PageTitle } from '../PageTitle';
+import { Header } from '../Header';
 
 type Album = {
   toEdit: boolean;
@@ -35,27 +35,34 @@ const AlbumForm: React.FC<{}> = () => {
   const [editData, setEditData] = useState<Album | null>(null);
   const [whichAlbum, setWhichAlbum] = useState<number>(0);
 
-  const queryParameters = new URLSearchParams(window.location.search);
-  const toEdit = queryParameters.get('edit') === 'true';
-  const artistId = queryParameters.get('artistId');
-  const id = queryParameters.get('id');
+  // const queryParameters = new URLSearchParams(window.location.search);
+  // const toEdit = queryParameters.get('edit') === 'true';
+  // const artistId = queryParameters.get('artistId');
+  // const id = queryParameters.get('id');
+
+  // this is throwing type errors with or without the optional renaming or attempted typing
+  const { artist, albid, edit } = useParams();
+  console.log({ artist, albid, edit });
+  const artistId = artist;
+  const id: string | undefined = albid;
+  const toEdit = edit === 'edit';
 
   useEffect(() => {
-    if (toEdit) {
-      fetchData(id, artistId);
-    } else {
-      console.log('new album');
-      setEditData({
-        toEdit: false,
-        artistId: artistId,
-        id: GenerateRandomId(),
-        name: '',
-        description: '',
-        len: 0,
-        coverImg: '',
-        tracks: '',
-      });
-    }
+    // if (toEdit) {
+    //   fetchData(id, artistId);
+    // } else {
+    //   console.log('new album');
+    //   setEditData({
+    //     toEdit: false,
+    //     artistId: artistId,
+    //     id: GenerateRandomId(),
+    //     name: '',
+    //     description: '',
+    //     len: 0,
+    //     coverImg: '',
+    //     tracks: '',
+    //   });
+    // }
   }, []);
 
   const fetchData = async (id: string | null, artistId: string | null) => {
@@ -130,10 +137,11 @@ const AlbumForm: React.FC<{}> = () => {
   return (
     <>
       <main>
-        {editData !== null && (
+        <div>This is album form</div>
+        {/* {editData !== null && (
           <>
             <h1>{editData.toEdit ? 'Edit' : 'New'} Album</h1>
-            <PageTitle title='Album Details' />
+            <Header title='Album Details' />
             <Formik initialValues={editData} validationSchema={AddNewSchema} onSubmit={handleSubmit} enableReinitialize>
               <Form>
                 {formNames.map((formItem, index) => (
@@ -145,7 +153,7 @@ const AlbumForm: React.FC<{}> = () => {
               </Form>
             </Formik>
           </>
-        )}
+        )} */}
       </main>
     </>
   );

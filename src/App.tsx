@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
-import { TableView, FOF, InputForm, ArtistDetail } from './components/';
+import { TableView, FOF, InputForm, ArtistDetail, AlbumDetail } from './components/';
 import { AlbumForm } from './components/AlbumForm/AlbumForm';
 
 // TODO: STYLING FOR THE TABLE VIEW
@@ -18,9 +18,11 @@ function App() {
         <Route index element={<TableView />} />
         <Route path='/table' element={<TableView />}></Route>
         <Route path='/form/:id?' element={<InputForm />}></Route>
-        <Route path='/album/' element={<AlbumForm />}></Route>
-        <Route path='/albums/:id/:isAlz' element={<TableView />}></Route>
+        <Route path='/album' element={<AlbumForm />}></Route>
         <Route path='/artist-detail/:id' element={<ArtistDetail />}></Route>
+        <Route path='/artist-detail/:id/albums' element={<TableView />}></Route>
+        <Route path='/artist-detail/:id/albums/:albumId' element={<AlbumDetail />}></Route>
+
         <Route path='*' element={<FOF />} />
       </Routes>
     </BrowserRouter>

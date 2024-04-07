@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 
-interface PageTitleProps {
+interface HeaderProps {
   title: string;
 }
 
-const PageTitle: React.FC<PageTitleProps> = ({ title }) => {
+const Header: React.FC<HeaderProps> = ({ title }) => {
   useEffect(() => {
     const myTitle = (): void => {
       document.title = title;
@@ -15,4 +15,4 @@ const PageTitle: React.FC<PageTitleProps> = ({ title }) => {
   return null;
 };
 
-export { PageTitle };
+export { Header };

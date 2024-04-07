@@ -13,33 +13,34 @@
     {
       "id": "a957",
       "name": "Prince",
-      "description": "Purple Rain, Purple Rain! is the sixth studio album by the American singer, songwriter, producer, and multi-instrumentalist Prince. It was released on June 25, 1984, by Warner Bros. Records as the soundtrack album to the 1984 film of the same name. Purple Rain was musically denser than Prince's previous albums, emphasizing full band performances, and multiple layers of guitars, keyboards, electronic synthesizer effects, drum machines, and other instruments.",
+
+      "description": "Prince Rogers Nelson (June 7, 1958 – April 21, 2016) was an American singer, multi-instrumentalist, songwriter, record producer, and actor. The recipient of numerous awards and nominations, he is widely regarded as one of the greatest musicians of his generation.[7] He was known for his flamboyant, androgynous persona;[8][9] his wide vocal range, which included a far-reaching falsetto and high-pitched screams; and his skill as a multi-instrumentalist, often preferring to play all or most of the instruments on his recordings.[10] His music incorporated a wide variety of styles, including funk, R&B, rock, new wave, soul, synth-pop, pop, jazz, blues, and hip hop. Prince produced his albums himself, pioneering the Minneapolis sound.",
       "url": "http://www.prince.com",
       "city": "Minneapolis",
       "image": "https://www.rollingstone.com/wp-content/uploads/2019/11/prince-1999-feature.jpg",
       "albums": [
         {
           "id": "hgEUqCF83Y",
+          "artistId": "a957",
+          "url": "http://www.prince.com",
           "name": "Purple Rain",
           "coverImg": "https://upload.wikimedia.org/wikipedia/en/9/9c/Princepurplerain.jpg",
           "description": "Purple Rain is the sixth studio album by the American singer, songwriter, producer, and multi-instrumentalist Prince. It was released on June 25, 1984, by Warner Bros. Records as the soundtrack album to the 1984 film of the same name. Purple Rain was musically denser than Prince's previous albums, emphasizing full band performances, and multiple layers of guitars, keyboards, electronic synthesizer effects, drum machines, and other instruments.",
           "len": 9,
+
           "tracks": "Let's Go Crazy, The Beautiful Ones, Computer Blue, Darling Nikki, Wednesday, Purple Rain, I Would Die 4 U, Baby I'm a Star, Father's Song"
         },
         {
           "id": "YoRhFkV8Qa",
+          "artistId": "a957",
           "name": "Controversy",
+          "url": "http://www.prince.com",
           "coverImg": "https://townsquare.media/site/960/files/2019/10/Prince-Controversy-Album-Image.jpg?w=980&q=75",
           "description": "Controversy is the fourth studio album by the American singer-songwriter and musician Prince, released on October 14, 1981, by Warner Bros. Records. It was produced by Prince, written (with the exception of one track) by him, and he also performed most of the instruments on its recording. \r\nThis was the first of his albums to associate Prince with the color purple as well as the first to use sensational spelling in his song titles.",
           "len": 8,
           "tracks": "Controversy, Sexuality, Do Me Baby, Private Joy, Ronnie Talk to Russia, Let's Work, Annie Christian, Jack U Off"
         }
-      ],
-      "coverImg": "https://upload.wikimedia.org/wikipedia/en/9/9c/Princepurplerain.jpg",
-      "len": 9,
-      "tracks": "Let's Go Crazy, The Beautiful Ones, Computer Blue, Darling Nikki, Wednesday, Purple Rain, I Would Die 4 U, Baby I'm a Star, Father's Song",
-      "toEdit": true,
-      "artistId": "a957"
+      ]
     },
     {
       "id": "8246",
@@ -51,14 +52,15 @@
       "albums": [
         {
           "id": "GeGX2cfgnG",
+          "artistId": "8246",
           "name": "Soulmate of the Month Club",
+          "url": "http://maxrocketmusic.com",
           "description": "Quirky love songs, political screeds, and humorous sarcasm",
           "len": 6,
           "coverImg": "https://maxrocketmusic.com/wp-content/uploads/2024/04/soulmate.jp_.jpg",
           "tracks": "Soulmate of the Month Club, 1959, Pitstache, Hand Me Down Love, Everyday Love Song, Love is a Drug",
           "type": "text",
-          "toEdit": true,
-          "artistId": "8246"
+          "toEdit": true
         }
       ]
     },
@@ -85,106 +87,6 @@
       "url": "whatever.cnet",
       "city": "London",
       "image": ""
-    },
-    {
-      "id": "YoRhFkV8Qa",
-      "toEdit": false,
-      "artistId": "a957",
-      "name": "Controversy",
-      "description": "Controversy is the fourth studio album by the American singer-songwriter and musician Prince, released on October 14, 1981, by Warner Bros. Records. It was produced by Prince, written (with the exception of one track) by him, and he also performed most of the instruments on its recording.\n\nThis was the first of his albums to associate Prince with the color purple as well as the first to use sensational spelling in his song titles.",
-      "len": "8",
-      "coverImg": "https://en.wikipedia.org/wiki/Controversy_(Prince_album)#/media/File:Prince-Controversy.jpg",
-      "tracks": "Controversy, Sexuality, Do Me Baby, Private Joy, Ronnie Talk to Russia, Let's Work, Annie Christian, Jack U Off"
-    },
-    {
-      "id": "YoRhFkV8Qa",
-      "toEdit": false,
-      "artistId": "a957",
-      "name": "Controversy",
-      "description": "Controversy is the fourth studio album by the American singer-songwriter and musician Prince, released on October 14, 1981, by Warner Bros. Records. It was produced by Prince, written (with the exception of one track) by him, and he also performed most of the instruments on its recording.\n\nThis was the first of his albums to associate Prince with the color purple as well as the first to use sensational spelling in his song titles.",
-      "len": "8",
-      "coverImg": "https://en.wikipedia.org/wiki/Controversy_(Prince_album)#/media/File:Prince-Controversy.jpg",
-      "tracks": "Controversy, Sexuality, Do Me Baby, Private Joy, Ronnie Talk to Russia, Let's Work, Annie Christian, Jack U Off"
-    },
-    {
-      "id": "YoRhFkV8Qa",
-      "toEdit": false,
-      "artistId": "a957",
-      "name": "Controversy",
-      "description": "Controversy is the fourth studio album by the American singer-songwriter and musician Prince, released on October 14, 1981, by Warner Bros. Records. It was produced by Prince, written (with the exception of one track) by him, and he also performed most of the instruments on its recording.\n\nThis was the first of his albums to associate Prince with the color purple as well as the first to use sensational spelling in his song titles.",
-      "len": "8",
-      "coverImg": "https://en.wikipedia.org/wiki/Controversy_(Prince_album)#/media/File:Prince-Controversy.jpg",
-      "tracks": "Controversy, Sexuality, Do Me Baby, Private Joy, Ronnie Talk to Russia, Let's Work, Annie Christian, Jack U Off"
-    },
-    {
-      "id": "YoRhFkV8Qa",
-      "toEdit": false,
-      "artistId": "a957",
-      "name": "Controversy",
-      "description": "Controversy is the fourth studio album by the American singer-songwriter and musician Prince, released on October 14, 1981, by Warner Bros. Records. It was produced by Prince, written (with the exception of one track) by him, and he also performed most of the instruments on its recording.\n\nThis was the first of his albums to associate Prince with the color purple as well as the first to use sensational spelling in his song titles.",
-      "len": "8",
-      "coverImg": "https://en.wikipedia.org/wiki/Controversy_(Prince_album)#/media/File:Prince-Controversy.jpg",
-      "tracks": "Controversy, Sexuality, Do Me Baby, Private Joy, Ronnie Talk to Russia, Let's Work, Annie Christian, Jack U Off"
-    },
-    {
-      "id": "YoRhFkV8Qa",
-      "toEdit": false,
-      "artistId": "a957",
-      "name": "Controversy",
-      "description": "Controversy is the fourth studio album by the American singer-songwriter and musician Prince, released on October 14, 1981, by Warner Bros. Records. It was produced by Prince, written (with the exception of one track) by him, and he also performed most of the instruments on its recording.\n\nThis was the first of his albums to associate Prince with the color purple as well as the first to use sensational spelling in his song titles.",
-      "len": "8",
-      "coverImg": "https://en.wikipedia.org/wiki/Controversy_(Prince_album)#/media/File:Prince-Controversy.jpg",
-      "tracks": "Controversy, Sexuality, Do Me Baby, Private Joy, Ronnie Talk to Russia, Let's Work, Annie Christian, Jack U Off"
-    },
-    {
-      "id": "YoRhFkV8Qa",
-      "toEdit": false,
-      "artistId": "a957",
-      "name": "Controversy",
-      "description": "Controversy is the fourth studio album by the American singer-songwriter and musician Prince, released on October 14, 1981, by Warner Bros. Records. It was produced by Prince, written (with the exception of one track) by him, and he also performed most of the instruments on its recording.\n\nThis was the first of his albums to associate Prince with the color purple as well as the first to use sensational spelling in his song titles.",
-      "len": "8",
-      "coverImg": "https://en.wikipedia.org/wiki/Controversy_(Prince_album)#/media/File:Prince-Controversy.jpg",
-      "tracks": "Controversy, Sexuality, Do Me Baby, Private Joy, Ronnie Talk to Russia, Let's Work, Annie Christian, Jack U Off"
-    },
-    {
-      "id": "YoRhFkV8Qa",
-      "toEdit": false,
-      "artistId": "a957",
-      "name": "Controversy",
-      "description": "Controversy is the fourth studio album by the American singer-songwriter and musician Prince, released on October 14, 1981, by Warner Bros. Records. It was produced by Prince, written (with the exception of one track) by him, and he also performed most of the instruments on its recording.\n\nThis was the first of his albums to associate Prince with the color purple as well as the first to use sensational spelling in his song titles.",
-      "len": "8",
-      "coverImg": "https://en.wikipedia.org/wiki/Controversy_(Prince_album)#/media/File:Prince-Controversy.jpg",
-      "tracks": "Controversy, Sexuality, Do Me Baby, Private Joy, Ronnie Talk to Russia, Let's Work, Annie Christian, Jack U Off"
-    },
-    {
-      "id": "YoRhFkV8Qa",
-      "toEdit": false,
-      "artistId": "a957",
-      "name": "Controversy",
-      "description": "Controversy is the fourth studio album by the American singer-songwriter and musician Prince, released on October 14, 1981, by Warner Bros. Records. It was produced by Prince, written (with the exception of one track) by him, and he also performed most of the instruments on its recording.\n\nThis was the first of his albums to associate Prince with the color purple as well as the first to use sensational spelling in his song titles.",
-      "len": "8",
-      "coverImg": "https://en.wikipedia.org/wiki/Controversy_(Prince_album)#/media/File:Prince-Controversy.jpg",
-      "tracks": "Controversy, Sexuality, Do Me Baby, Private Joy, Ronnie Talk to Russia, Let's Work, Annie Christian, Jack U Off"
-    },
-    {
-      "id": "YoRhFkV8Qa",
-      "toEdit": false,
-      "artistId": "a957",
-      "name": "Controversy",
-      "description": "Controversy is the fourth studio album by the American singer-songwriter and musician Prince, released on October 14, 1981, by Warner Bros. Records. It was produced by Prince, written (with the exception of one track) by him, and he also performed most of the instruments on its recording.\n\nThis was the first of his albums to associate Prince with the color purple as well as the first to use sensational spelling in his song titles.",
-      "len": "8",
-      "coverImg": "https://en.wikipedia.org/wiki/Controversy_(Prince_album)#/media/File:Prince-Controversy.jpg",
-      "tracks": "Controversy, Sexuality, Do Me Baby, Private Joy, Ronnie Talk to Russia, Let's Work, Annie Christian, Jack U Off"
-    },
-    {
-      "id": "YoRhFkV8Qa",
-      "toEdit": false,
-      "artistId": "a957",
-      "name": "Controversy",
-      "description": "Controversy is the fourth studio album by the American singer-songwriter and musician Prince, released on October 14, 1981, by Warner Bros. Records. It was produced by Prince, written (with the exception of one track) by him, and he also performed most of the instruments on its recording.\n\nThis was the first of his albums to associate Prince with the color purple as well as the first to use sensational spelling in his song titles.",
-      "len": "8",
-      "coverImg": "https://en.wikipedia.org/wiki/Controversy_(Prince_album)#/media/File:Prince-Controversy.jpg",
-      "tracks": "Controversy, Sexuality, Do Me Baby, Private Joy, Ronnie Talk to Russia, Let's Work, Annie Christian, Jack U Off"
     }
   ]
 }

@@ -3,7 +3,7 @@ import { useNavigate, useLocation, useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { Navigation } from '../Navigation';
 import './artistDetail.css';
-import { PageTitle } from '../PageTitle';
+import { Header } from '../Header';
 
 type Album = {
   toEdit: boolean;
@@ -44,9 +44,8 @@ const ArtistDetail = () => {
           return data.id === id;
         });
 
-        console.log('artistData: ', artistData);
-
         setArtistData(artistData);
+        console.log('artistData: ', artistData);
       } catch (error) {
         console.log('Error fetch data in ArtistDetail');
       }
@@ -59,13 +58,12 @@ const ArtistDetail = () => {
 
   return (
     <div>
-      <PageTitle title='Artist Details' />;
+      <Header title='Artist Details' />
       <Navigation />
       <main>
         <h1>Artist Detail</h1>
         <div className='rainbow-line'></div>
         {modifiedData.map((details) => {
-          console.log('modifiedData: ', modifiedData);
           return (
             <section className='artist-detail' key={id}>
               <article>
@@ -120,6 +118,9 @@ const ArtistDetail = () => {
                 </div>
               </article>
               <footer className='rightNote'>
+                <Link className='button' to={`/artist-detail/${id}/albums`}>
+                  List Albums
+                </Link>
                 <Link className='button' to={`/album/?artistId=${id}`}>
                   Add Album
                 </Link>

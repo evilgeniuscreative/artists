@@ -4,4 +4,6 @@ export * from './InputForm';
 export * from './FormItem';
 export * from './ArtistDetail';
 export * from './AlbumForm';
+export * from './AlbumDetail';
 export * from './Navigation';
+export * from './Header';
