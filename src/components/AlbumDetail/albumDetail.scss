@@ -1,5 +1,5 @@
 // album detail
-
+@import '../../vars.scss';
 .album-detail {
   article {
     display: flex;
@@ -8,5 +8,10 @@
   }
   .album-image {
     margin-top: 30px;
+    height: 300px;
+    img {
+      @include bradius;
+      width: 300px;
+    }
   }
 }

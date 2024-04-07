@@ -1,1 +1,1 @@
-.album-detail article{display:flex;padding:0 50px;gap:25px}.album-detail .album-image{margin-top:30px}
+.album-detail article{display:flex;padding:0 50px;gap:25px}.album-detail .album-image{margin-top:30px;height:300px}.album-detail .album-image img{border-radius:5px;width:300px}
